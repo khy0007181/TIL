@@ -101,7 +101,7 @@ public class SampleControllerTest {
 ### 요청 식별자로 맵핑하기
 - `@RequestMapping`은 다음과 같은 패턴을 지원한다.
     * ? : 한 글자 ex) /author/??? => /author/123
-    * *: 여러 글자 ex) /author/* => /author/hayoung
+    * \*: 여러 글자 ex) /author/* => /author/hayoung
     * ** : 여러 패스 ex) /author/** => /author/hayoung/book
 - 패턴이 중복되는 경우에는 가장 구체적으로 맵핑되는 핸들러를 사용하게 된다.
     * 밑의 코드에서 URI를 `"/hello/hayoung"`이라고 보내면 두 핸들러 모두 해당되지만 helloHayoung()이 맵핑된다.
