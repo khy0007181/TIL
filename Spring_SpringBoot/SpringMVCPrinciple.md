@@ -55,9 +55,9 @@
 ### Servlet 생명주기
 - Servlet 컨테이너가 Servlet 인스턴스의 `init()` 메소드를 호출하여 초기화 한다.
     * 최초 요청을 받았을 때 한번 초기화 하고 나면 그 다음 요청부터는 이 과정을 생략한다.
-- Servlet이 초기화 된 다음부터 클라이언트의 요청을 처리할 수 있다. 각 요청은 별도의 쓰레드로 처리하고 이때 Servlet 인스턴스의 `service(`)` 메소드를 호출한다.
+- Servlet이 초기화 된 다음부터 클라이언트의 요청을 처리할 수 있다. 각 요청은 별도의 쓰레드로 처리하고 이때 Servlet 인스턴스의 `service()` 메소드를 호출한다.
     * 이 안에서 HTTP 요청을 받고 클라이언트로 보낼 HTTP 응답을 만든다.
-    * service()는 보통 HTTP Method에 따라 `doGet()`, `doPost()` 등으로 처리를 위임한다.
+    * `service()`는 보통 HTTP Method에 따라 `doGet()`, `doPost()` 등으로 처리를 위임한다.
     * 따라서 보통 `doGet()` 또는 `doPost()`를 구현한다.
 - Servlet 컨테이너 판단에 따라 해당 Servlet을 메모리에서 내려야 할 시점에 `destroy()`를 호출한다.
 <br>
@@ -239,6 +239,12 @@ public class WebConfig {
     * 이렇게 되면 Root WebApplicationContext가 있지 않고 DispatcherServlet이 만드는 WebApplicationContext(모든 bean이 여기 등록)가 루트가 된다.
 - 최근에는 대부분 상속구조보다는 DispatcherServlet 하나만 등록되어 있고 DispatcherServlet이 만든 ApplicationContext에 모든 bean이 등록되어 동작하는 방식을 사용한다.
 <br>
+
+#### 스프링 부트에서는?
+- 현재는 servlet container가 먼저 뜨고 안에 등록되는 servlet application에 spring을 연동하는 방법이고
+- 스프링 부트에서는 스프링 부트 자바 애플리케이션이 먼저 뜨고 그 안에 톰캣이 내장 서버로 뜬다.
+- 부트에서는 servlet을 코드로 등록한다.
+- 즉 위의 방법은 톰캣 안에 스프링을 넣은 형태이고 부트에서는 애플리케이션 안에 톰캣을 넣은 것이라고 생각하면 된다.
 
 ## DispatcherServlet
 
