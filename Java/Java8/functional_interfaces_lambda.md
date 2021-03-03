@@ -27,7 +27,7 @@ public interface RunSomething {
     * Java 8 이전
         - 인터페이스의 구현체를 만들어서 사용
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             // 익명 내부 클래스(anonymous inner class)
@@ -43,7 +43,7 @@ public interface RunSomething {
     * Java 8에서는 인터페이스가 1개인 경우 람다 표현식 사용
         - IDE에서는 단축키로 람다 표현식으로 바꿔준다.
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             RunSomething runSomething = () -> System.out.println("Hello");
@@ -67,7 +67,7 @@ public interface RunSomething {
     }
     ```
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             RunSomething runSomething = (number) -> {
@@ -84,7 +84,7 @@ public interface RunSomething {
     * 사이드 이팩트가 없다.
         - 함수 밖에 있는 값을 변경하는 경우 pure한 함수라고 할 수 없다.
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             RunSomething runSomething = new RunSomething() {
@@ -103,7 +103,7 @@ public interface RunSomething {
         - 함수 밖에 있는 값을 사용할 경우 pure한 함수라고 할 수 없다.
         - final일 경우 사용 가능
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             RunSomething runSomething = new RunSomething() {
@@ -139,7 +139,7 @@ public interface RunSomething {
     }
     ```
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             Plus10 plus10 = new Plus10();
@@ -149,7 +149,7 @@ public interface RunSomething {
     ```
     * 람다 표현식을 사용해 바로 구현해도 된다.
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             Function<Integer, Integer> plus10 = (number) -> number + 10;
@@ -161,7 +161,7 @@ public interface RunSomething {
         - `andThen()`
         - `compose()`
     ```java
-    public class foo {
+    public class Foo {
 
         public static void main(String[] args) {
             Function<Integer, Integer> plus10 = (number) -> number + 10;
@@ -181,7 +181,7 @@ public interface RunSomething {
     * 함수 조합용 메서드
         - `andThen()`
 ```java
-public class foo {
+public class Foo {
 
     public static void main(String[] args) {
         Consumer<Integer> printT = (i) -> System.out.println(i);
@@ -193,7 +193,7 @@ public class foo {
 - `Supplier<T>`
     * T 타입의 값을 제공하는 함수 인터페이스
 ```java
-public class foo {
+public class Foo {
 
     public static void main(String[] args) {
         Supplier<Integer> get10 = () -> 10;
@@ -208,7 +208,7 @@ public class foo {
         - `Or()`
         - `Negate()`
 ```java
-public class foo {
+public class Foo {
 
     public static void main(String[] args) {
         Predicate<String> startsWithhayoung = (s) -> s.startsWith("hayoung");
