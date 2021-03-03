@@ -287,3 +287,71 @@ public class Foo {
 }
 ```
 <br>
+
+## Method Reference
+- 람다가 하는 일이 기존 메소드 또는 생성자를 호출하는 거라면, 메소드 레퍼런스를 사용해서 매우 간결하게 표현할 수 있다.
+<br>
+
+### 메서드 참조 방법
+- 스태틱 메소드 참조
+    * `타입::스태틱 메서드`
+- 특정 객체의 인스턴스 메서드 참조
+    * `객체 레퍼런스::인스턴스 메서드`
+- 임의 객체의 인스턴스 메서드 참조
+    * `타입::인스턴스 메서드`
+- 생성자 참조
+    * `타입::new`
+```java
+public class Greeting {
+
+    private String name;
+
+    public Greeting() {
+    }
+
+    public Greeting(String name) {
+        this.name = name;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String hello(String name) {
+        return "hello " + name;
+    }
+
+    public static String hi(String name) {
+        return "hi " + name;
+    }
+}
+```
+```java
+public class App {
+
+    public static void main(String[] args) {
+        // 스태틱 메서드 참조
+        UnaryOperator<String> hi = Greeting::hi;
+
+        // 특정 객체의 인스턴스 메서드 참조
+        Greeting greeting = new Greeting();
+        UnaryOperator<String> hello = greeting::hello;
+
+        // 임의 객체의 인스턴스 메서드 참조
+        // Comparator가 FunctionalInterface이므로 람다를 넣을 수 있고, 람다 대신 메서드 래퍼런스를 사용할 수 있다.
+        String[] names = {"hayoung", "kimhayoung", "paperCar"};
+        Arrays.sort(names, String::compareToIgnoreCase);
+        System.out.println(Arrays.toString(names)); // [hayoung, kimhayoung, paperCar]
+
+        // 입력값이 없는 생성자의 경우
+        // 이 자체로는 인스턴스를 생성하지 않는다.  get() 해야 만들어진다.
+        Supplier<Greeting> newGreeting = Greeting::new;
+        // Greeting greeting2 = newGreeting.get();
+
+        // 입력값이 있는 생성자의 경우
+        Function<String, Greeting> hayoungGreeting = Greeting::new;
+    }
+
+}
+```
+<br>
