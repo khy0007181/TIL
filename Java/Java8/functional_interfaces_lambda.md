@@ -13,7 +13,7 @@ public interface RunSomething {
 - 추상 메소드를 딱 하나만 가지고 있는 인터페이스
     * 2개 있으면 안된다.
 - SAM (Single Abstract Method) 인터페이스
-- `@FuncationInterface` 애노테이션을 가지고 있는 인터페이스
+- [`@FuncationInterface`](https://docs.oracle.com/javase/8/docs/api/java/lang/FunctionalInterface.html) 애노테이션을 가지고 있는 인터페이스
     * Java가 제공해주는 애노테이션
     * 애노테이션을 붙이고 함수형 인터페이스를 위반하면 컴파일 에러 발생
 - 정의한 함수형 인터페이스를 사용하는 방법 : 람다 표현식
@@ -235,7 +235,7 @@ public class Foo {
 <br>
 
 ### 바디
-- 화상표 오른쪽에 함수 본문을 정의한다.
+- 화살표 오른쪽에 함수 본문을 정의한다.
 - 여러 줄인 경우에 { }를 사용해서 묶는다.
 - 한 줄인 경우에 생략 가능, return도 생략 가능.
 <br>
@@ -245,7 +245,7 @@ public class Foo {
     * final이거나 effective final인 경우에만 참조할 수 있다.
     * 그렇지 않을 경우 concurrency문제가 생길 수 있어서 컴파일러가 방지한다.
 - effective final
-    * 이것도 역시 자바 8부터 지원하는 기능으로 **사실상** final인 변수.
+    * Java 8부터 지원하는 기능으로 **사실상** final인 변수.
     * 더이상 어디서도 변경하지 않는 경우
     * final 키워드 사용하지 않은 변수를 로컬 클래스, 익명 클래스 구현체, 람다에서 참조할 수 있다.
 - 람다는 로컬 클래스, 익명 클래스 구현체와 달리 **shadowing**하지 않는다.
@@ -286,6 +286,11 @@ public class Foo {
     }
 }
 ```
+<br>
+
+### 참고
+- [Shadowing](https://docs.oracle.com/javase/tutorial/java/javaOO/nested.html#shadowing)
+- [Lambda Expressions](https://docs.oracle.com/javase/tutorial/java/javaOO/lambdaexpressions.html)
 <br>
 
 ## Method Reference
@@ -355,3 +360,6 @@ public class App {
 }
 ```
 <br>
+
+### 참고
+[Method References](https://docs.oracle.com/javase/tutorial/java/javaOO/methodreferences.html)
