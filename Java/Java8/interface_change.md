@@ -128,3 +128,87 @@ public class App {
 ### 참고
 - [Evolving Interfaces](https://docs.oracle.com/javase/tutorial/java/IandI/nogrow.html)
 - [Default Methods](https://docs.oracle.com/javase/tutorial/java/IandI/defaultmethods.html)
+<br>
+
+## Java 8 API의 기본 메소드와 스태틱 메소드
+- Java 8에서 추가한 기본 메소드로 인한 API 변화
+<br>
+
+### [Iterable](https://docs.oracle.com/javase/8/docs/api/java/lang/Iterable.html)의 기본 메소드
+- `forEach()`
+```java
+public class App {
+
+    public static void main(String[] args) {
+        List<String> name = new ArrayList<>();
+        name.add("hayoung");
+        name.add("kimhayoung");
+        name.add("paperCar");
+        name.add("foo");
+
+        name.forEach(System.out::println);
+    }
+
+}
+```
+- [`spliterator()`](https://docs.oracle.com/javase/8/docs/api/java/util/Spliterator.html)
+    * iterator와 비슷하지만 쪼갤 수 있는 기능을 가지고 있는 iterator라고 생각하면 된다.
+```java
+public class App {
+
+    public static void main(String[] args) {
+        List<String> name = new ArrayList<>();
+        name.add("hayoung");
+        name.add("kimhayoung");
+        name.add("paperCar");
+        name.add("foo");
+
+        Spliterator<String> spliterator = name.spliterator();
+        Spliterator<String> spliterator1 = spliterator.trySplit(); // 반으로 나눠진다.
+        while(spliterator.tryAdvance(System.out::println));
+        System.out.println("==========");
+        while (spliterator1.tryAdvance(System.out::println));
+    }
+}
+```
+<br>
+
+### [Collection](https://docs.oracle.com/javase/8/docs/api/java/util/Collection.html)의 기본 메소드
+- `stream() / parallelStream()`
+    * `stream()`은 element들을 stream으로 만들어서 functional한 처리를 할 수 있다.
+- `removeIf(Predicate)`
+```java
+public class App {
+
+    public static void main(String[] args) {
+        List<String> name = new ArrayList<>();
+        name.add("hayoung");
+        name.add("kimhayoung");
+        name.add("paperCar");
+        name.add("foo");
+
+        // k로 시작하는 것을 삭제
+        name.removeIf(s -> s.startsWith("k"));
+
+        name.forEach(System.out::println);
+        // hayoung
+        // paperCar
+        // foo
+    
+    }
+
+}
+```
+- `spliterator()`
+<br>
+
+### [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)의 기본 메소드 및 스태틱 메소드
+- `reversed()`
+    * 반대로 정렬ㅊ
+- `thenComparing()`
+    * 추가적으로 compare을 하고 싶은 경우 사용
+- `static reverseOrder()` / `naturalOrder()`
+- `static nullsFirst()` / `nullsLast()`
+    * null 값인 경우 우선순위 결정
+- `static comparing()`
+<br>
