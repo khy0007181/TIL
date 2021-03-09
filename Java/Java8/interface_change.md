@@ -118,7 +118,7 @@ public class App {
     public static void main(String[] args) {
         ...
 
-        Foo.printAnything(); // Foo
+        foo.printAnything(); // Foo
     }
 
 }
@@ -204,9 +204,9 @@ public class App {
 
 ### [Comparator](https://docs.oracle.com/javase/8/docs/api/java/util/Comparator.html)의 기본 메소드 및 스태틱 메소드
 - `reversed()`
-    * 반대로 정렬ㅊ
+    * 반대로 정렬
 - `thenComparing()`
-    * 추가적으로 compare을 하고 싶은 경우 사용
+    * 추가적으로 compare 하고 싶은 경우 사용
 - `static reverseOrder()` / `naturalOrder()`
 - `static nullsFirst()` / `nullsLast()`
     * null 값인 경우 우선순위 결정
