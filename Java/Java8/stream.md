@@ -74,3 +74,111 @@ public class App {
 ### 참고
 - [Interface Stream<T>](https://docs.oracle.com/javase/8/docs/api/java/util/stream/Stream.html)
 - [Package java.util.stream](https://docs.oracle.com/javase/8/docs/api/java/util/stream/package-summary.html)
+<br>
+
+## 스트림 API 예제
+
+### 걸러내기
+- `Filter(Predicate)`
+- 예) 이름이 3글자 이상인 데이터만 새로운 스트림으로 
+<br>
+
+### 변경하기
+- `Map(Function)` 또는 `FlatMap(Function)`
+- 예) 각각의 Post 인스턴스에서 String title만 새로운 스트림으로
+- 예) List<Stream<String>>을 String의 스트림으로
+<br>
+
+### 생성하기
+- `generate(Supplier)` 또는 `Iterate(T seed, UnaryOperator)`
+- 예) 10부터 1씩 증가하는 무제한 숫자 스트림
+- 예) 랜덤 int 무제한 스트림
+<br>
+
+### 제한하기
+- `limit(long)` 또는 `skip(long)`
+- 예) 최대 5개의 요소가 담긴 스트림을 리턴한다.
+- 예) 앞에서 3개를 뺀 나머지 스트림을 리턴한다.
+<br>
+
+### 스트림에 있는 데이터가 특정 조건을 만족하는지 확인
+- `anyMatch()`, `allMatch()`, `nonMatch()`
+- 예) k로 시작하는 문자열이 있는지 확인한다. (true 또는 false를 리턴한다.)
+- 예) 스트림에 있는 모든 값이 10보다 작은지 확인한다.
+<br>
+
+### 개수 세기
+- `count()`
+- 예) 10보다 큰 수의 개수를 센다.
+<br>
+
+### 스트림을 데이터 하나로 뭉치기
+- `reduce(identity, BiFunction)`, `collect()`, `sum()`, `max()`
+- 예) 모든 숫자 합 구하기
+- 예) 모든 데이터를 하나의 List 또는 Set에 옮겨 담기
+<br>
+
+### 예제 코드
+```java
+public class App {
+
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(2, "spring data jpa", true));
+        springClasses.add(new OnlineClass(3, "spring mvc", false));
+        springClasses.add(new OnlineClass(4, "spring core", false));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        List<OnlineClass> javaClasses = new ArrayList<>();
+        javaClasses.add(new OnlineClass(6, "The Java, Test", true));
+        javaClasses.add(new OnlineClass(7, "The Java, Code manipulation", true));
+        javaClasses.add(new OnlineClass(8, "The Java, 8 to 11", false));
+
+        List<List<OnlineClass>> hayoungEvents = new ArrayList<>();
+        hayoungEvents.add(springClasses);
+        hayoungEvents.add(javaClasses);
+
+        // spring 으로 시작하는 수업
+        springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .forEach(oc -> System.out.println(oc.getId()));
+
+        // close 되지 않은 수업
+        springClasses.stream()
+                // .filter(oc -> !oc.isClosed())로 해도 되지만 더 단축도 가능
+                .filter(Predicate.not(OnlineClass::isClosed))
+                .forEach(oc -> System.out.println(oc.getId()));
+
+        // 수업 이름만 모아서 스트림 만들기
+        springClasses.stream()
+                .map(OnlineClass::getTitle)
+                .forEach(System.out::println);
+
+        // 두 수업 목록에 들어있는 모든 수업 아이디 출력
+        hayoungEvents.stream()
+                .flatMap(Collection::stream)
+                .forEach(oc -> System.out.println(oc.getId()));
+
+        // 10부터 1씩 증가하는 무제한 스트림 중에서 앞에 10개 빼고 최대 10개 까지만
+        Stream.iterate(10, i -> i + 1)
+                .skip(10)
+                .limit(10)
+                .forEach(System.out::println);
+
+        // 자바 수업 중에 Test가 들어있는 수업이 있는지 확인
+        boolean test = javaClasses.stream().anyMatch(oc -> oc.getTitle().contains("Test"));
+        System.out.println(test);
+
+        // 스프링 수업 중에 제목에 spring이 들어간 것만 모아서 List로 만들기
+        List<String> spring = springClasses.stream()
+                .map(OnlineClass::getTitle)
+                .filter(t -> t.contains("spring"))
+                .collect(Collectors.toList());
+        spring.forEach(System.out::println);
+        
+    }
+
+}
+```
+<br>
