@@ -40,7 +40,7 @@ public interface RunSomething {
         }
     }
     ```
-    * Java 8에서는 인터페이스가 1개인 경우 람다 표현식 사용
+    * Java 8에서는 추상 메서드가 1개인 경우 람다 표현식 사용
         - IDE에서는 단축키로 람다 표현식으로 바꿔준다.
     ```java
     public class Foo {
@@ -250,6 +250,8 @@ public class Foo {
     * final 키워드 사용하지 않은 변수를 로컬 클래스, 익명 클래스 구현체, 람다에서 참조할 수 있다.
 - 람다는 로컬 클래스, 익명 클래스 구현체와 달리 **shadowing**하지 않는다.
     * 로컬 클래스, 익명 클래스는 새로운 scope을 만들지만, 람다는 람다를 감싸고 있는 scope과 같다
+    *  같은 scope 안에 동일한 이름의 변수를 정의할 수 없다.
+        - 인자 부분에 i 대신 baseNumber이란 이름을 사용할 수 없다.
 ```java
 public class Foo {
 
@@ -280,6 +282,7 @@ public class Foo {
         // 람다
         IntConsumer printInt = (i) -> {
             System.out.println(i + baseNumber); // run 메서드의 baseNumber와 같은 scope
+            // i 대신 baseNumber라고 사용 불가능
         };
 
         printInt.accept(10);
