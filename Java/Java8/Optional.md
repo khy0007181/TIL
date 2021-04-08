@@ -34,5 +34,5 @@
 
 ### 참고
 - [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html)
-- [](https://www.oracle.com/technical-resources/articles/java/java8-optional.html)
+- [Tired of Null Pointer Exceptions? Consider](https://www.oracle.com/technical-resources/articles/java/java8-optional.html)
 <br>
