@@ -38,3 +38,209 @@
 - [Optional](https://docs.oracle.com/javase/8/docs/api/java/util/Optional.html)
 - [Tired of Null Pointer Exceptions? Consider](https://www.oracle.com/technical-resources/articles/java/java8-optional.html)
 <br>
+
+## Optional API
+
+### Optional 만들기
+- `Optional.of()`
+- `Optional.ofNullable()`
+- `Optional.empty()`
+<br>
+
+### Optional에 값이 있는지 없는지 확인하기
+- `isPresent()`
+- `isEmpty()` 
+    * Java 11부터 제공
+```java
+public class App {
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .findFirst();
+
+        System.out.println(optional.isPresent()); // true
+        System.out.println(optional.isEmpty()); // false
+    }
+}
+```
+<br>
+
+
+### Optional에 있는 값 가져오기
+- `get()`
+- 만약 Optional이 비어있다면?
+    * RuntimeException이 발생한다.
+    * 가급적이면 `get()`을 사용하지 않고 밑에 있는 메서드를 사용하는 것이 낫다.
+```java
+public class App {
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .findFirst();
+
+        OnlineClass onlineClass = optional.get();
+        System.out.println(onlineClass.getTitle()); // spring boot
+    }
+}
+```
+<br>
+
+### Optional에 값이 있는 경우에 그 값 사용하기
+- `ifPresent(Consumer)`
+```java
+public class App {
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .findFirst();
+
+        optional.ifPresent(oc -> System.out.println(oc.getTitle())); // spring boot
+    }
+}
+```
+<br>
+
+### Optional에 값이 있으면 가져오고 없으면 다른 값을 반환
+- `orElse(T)`
+- 다음 코드에서 optional에 값이 있으나 없으나 `createNewClass()`의 출력은 실행된다.
+```java
+public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("jpa"))
+                .findFirst();
+
+        OnlineClass onlineClass = optional.orElse(createNewClass());
+        System.out.println(onlineClass.getTitle()); 
+
+        // creating new online class
+        // New class
+    }
+
+    private static OnlineClass createNewClass() {
+        System.out.println("creating new online class");
+        return new OnlineClass(10, "New class", false);
+    }
+```
+<br>
+
+### Optional에 값이 있으면 가져오고 없는 경우에 Supplier 실행
+- `orElseGet(Supplier)`
+    * `orElse()`와 달리 optional에 값이 있는 경우 Supplier를 실행하지 않는다.
+```java
+public class App {
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .findFirst();
+
+        OnlineClass onlineClass = optional.orElseGet(App::createNewClass);
+        System.out.println(onlineClass.getTitle()); // spring boot
+    }
+
+    private static OnlineClass createNewClass() {
+        System.out.println("creating new online class");
+        return new OnlineClass(10, "New class", false);
+    }
+}
+```
+<br>
+
+### Optional에 값이 있으면 가져오고 없는 경우 에러를 던지기
+- `orElseThrow()`
+    * 기본적으로는 NoSuchElementException을 던지지만 원하는 에러가 있다면 Supplier로 제공해주면 된다.
+        - Lambda Expressions 또는 Method Reference 사용
+```java
+public class App {
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .findFirst();
+
+        // Lambda
+        OnlineClass onlineClass = optional.orElseThrow(() -> {
+           return new IllegalArgumentException();
+        });
+
+        // Method Reference
+        OnlineClass onlineClass = optional.orElseThrow(IllegalStateException::new);
+
+        System.out.println(onlineClass.getTitle());
+    }
+}
+```
+<br>
+
+### Optional에 들어있는 값 걸러내기
+- `Optional filter(Predicate)`
+    * 있다는 가정하에 동작하면 없는 경우 아무 일도 일어나지 않는다.
+    * 결과는 Optional이다. 
+        - filter에 해당되면 그 Optional 그대로 나오고 해당되지 않으면 비어있는 Optional이 나온다.
+```java
+public class App {
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .findFirst();
+
+        Optional<OnlineClass> onlineClass = optional.filter(oc -> !oc.isClosed());
+        System.out.println(onlineClass.isEmpty()); // true
+    }
+}
+```
+<br>
+
+### Optional에 들어있는 값 변환하기
+- `Optional map(Function)`
+- `Optional flatMap(Function)`
+    * Optional 안에 들어있는 인스턴스가 Optional인 경우에 사용하면 편리하다.
+    * Stream의 `flatMap()`과는 다르다.
+    * map으로 변환한 타입이 Optional이면 `flatMap()` 사용
+- map을 사용하면 결과는 Optional이며 Function이 리턴하는 타입에 따라 Optional이 담고 있는 타입이 달라진다.
+```java
+public class App {
+    public static void main(String[] args) {
+        List<OnlineClass> springClasses = new ArrayList<>();
+        springClasses.add(new OnlineClass(1, "spring boot", true));
+        springClasses.add(new OnlineClass(5, "rest api development", false));
+
+        Optional<OnlineClass> optional = springClasses.stream()
+                .filter(oc -> oc.getTitle().startsWith("spring"))
+                .findFirst();
+
+        // map으로 변환한 타입이 Optional이면?
+        Optional<Progress> progress = optional.flatMap(OnlineClass::getProgress);
+        
+        // 이렇게 2번 꺼낼 필요가 없다.
+        Optional<Optional<Progress>> progress1 = optional.map(OnlineClass::getProgress);
+        Optional<Progress> progress2 = progress1.orElse(Optional.empty());
+    }
+}
+```
