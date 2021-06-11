@@ -18,7 +18,7 @@ dependencies {
 - 실제 DB의 테이블과 매칭될 클래스 Posts 생성
     * 다음 코드와 같이 주요 어노테이션을 클래스에 가깝게 두면 이후에 코틀린 등의 새 언어 전환으로 롬복이 더이상 필요없을 경우 쉽게 삭제할 수 있다.
     * `@NoArgsConstructor`
-        - 기본 생성자를 자동으로 추가해주는 어노테이션으로 `public Post() { }`과 같으 효과이다.
+        - 기본 생성자를 자동으로 추가해주는 어노테이션으로 `public Post() { }`과 같은 효과이다.
     * `@Entity`
         - 테이블과 링크될 클래스임을 나타낸다.
         - 기본값으로 클래스의 카멜케이스 이름을 언더스코어 네이밍(_) 으로 테이블 이름을 매칭한다.
@@ -66,7 +66,7 @@ public class Posts extends BaseTimeEntity {
 ```
 - Posts 클래스로 Database에 접근하게 해줄 JpaRepository 생성
 ```java
-public interface PostsRepository  extends JpaRepository<Posts, Long> {
+public interface PostsRepository extends JpaRepository<Posts, Long> {
 
 }
 ```
