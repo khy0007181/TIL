@@ -237,6 +237,7 @@ public class Team extends BaseEntity {
 - 테이블과 관계가 없고, 단순히 엔티티가 공통으로 사용하는 맵핑 정보를 모으는 역할을 한다.
 - 주로 등록일, 수정일, 등록자, 수정자 같은 전체 엔티티에서 공통으로 적용하는 정보를 모을 때 사용한다.
 - JPA에서 @Entity클래스는 `@Entity`나 `@MappedSuperclass`로 지정한 클래스만 상속할 수 있다.
+<br>
 
 ## 복합키와 식별 관계 매핑
 
@@ -263,4 +264,57 @@ public class Team extends BaseEntity {
 - JPA에서는 복합키를 지원하기 위해 2가지 방법을 제공한다.
     * `@IdClass` : 관계형 데이터베이스에 가까운 방법
     * `@EmbeddedId` : 좀 더 객체지향에 가까운 방법
+<br>
+
+#### @IdClass
+- 복합키를 매핑하기 위해 식별자 클래스를 별도로 생성
+- 식별자 클래스의 속성명과 엔티티에서 사용하는 식별자의 속성명이 같아야 한다.
+- Serializable 인터페이스를 구현해야 한다.
+- `equals()`, `hashCode()`를 구현해야 한다.
+- 기본 생성자가 있어야 한다.
+- 식별자 클래스는 public이어야 한다.
+```java
+public class ParentId implements Serializable {
+
+    private String id1;
+    priavte String id2;
+
+    ... // 기본 생성자, equals(), hashCode() 등 구현 필요
+}
+```
+```java
+@Entity
+@IdClass(ParentId.class)
+public class Parent {
+
+    @Id
+    @Column(name = "PARENT_ID1")
+    private String id1; // ParentId.id1과 연결
+
+    @Id
+    @Column(name = "PARENT_ID2")
+    private String id2; // ParentId.id2과 연결
+
+    ...
+}
+```
+- 부모 테이블의 기본키 컬럼이 복합키면 자식 테이블의 외래키도 복합키다.
+    * 따라서 외래키 매핑 시 여러 컬럼을 매핑해야하므로 `@JoinColumns`로 각각의 외래키 컬럼을 매핑한다.
+    * 참고로 아래 코드와 같이 `@JoinColumn`의 name 속성과 referencedColumnName 속성의 값이 같으면 referencedColumnName은 생략 가능하다.
+```java
+@Entity
+public class Child {
+
+    @Id
+    private String id;
+
+    @ManyToOne
+    @JoinColumns ({
+        @JoinColumn(name = "PARENT_ID1", referenceColumnName = "PARENT_ID1"),
+        @JoinColumn(name = "PARENT_ID2", referenceColumnName = "PARENT_ID2"),
+    })
+    private Parent parent;
+
+}
+```
 <br>
