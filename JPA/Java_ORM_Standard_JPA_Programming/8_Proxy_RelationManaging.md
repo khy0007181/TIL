@@ -258,6 +258,13 @@ public class Member extends BaseEntity {
     * 즉시로딩은 상상하지 못한 쿼리가 나간다.
 <br>
 
+### NULL 제약 조건과 JPA 조인 전략
+- JPA는 기본적으로 즉시 로딩 시 INNER JOIN이 아닌 OUTER JOIN을 사용한다.
+    * 외래키가 null일 경우도 있기 때문
+- OUTER JOIN보다 INNER JOIN이 성능과 최적화에 유리하다.
+- INNER JOIN을 사용하게 하려면 외래키에 NOT NULL제약 조건을 설정하면 값이 있는 것을 보장한다.
+- `@JoinColumn(nullable = false)`와 같이 외래키에 NULL 값을 허용하지 않는다고 설정하면 JPA는 OUTER JOIN 대신에 INNER JOIN을 사용한다.
+<br>
 
 ## 영속성 전이 : CASCADE
 - 영속성 전이는 즉시로딩, 지연로딩이나 연관관계 설정과 전혀 관계가 없다.
