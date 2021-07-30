@@ -559,3 +559,5 @@ ex) `<img>`, `<object>`, `<br>`, `<sub>`, `<span>`, `<input>`, `<textare>`, `<la
 - mediaquery를 사용하면 창의 크기에 따라 반응하는 웹 페이지를 만들 수 있다.
 - 예제 코드에서는 스크린의 크기가 800px보다 작아지면 div의 내용이 사라지게 만들었다.
 <br>
+
+test
