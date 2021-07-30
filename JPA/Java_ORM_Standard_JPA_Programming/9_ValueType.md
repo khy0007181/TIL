@@ -202,7 +202,7 @@ member1.getHomeAddress().setCity("newCity");
 
 tx.commit();
 ```
-- 이러한 부작용(side effect)는 매우 잡기가 어렵다.
+- 이러한 부작용(side effect)은 매우 잡기가 어렵다.
 - 만약 엔티티 간에 공유하고 싶은 값은 엔티티로 만들어서 공유해야한다.
 <br>
 
