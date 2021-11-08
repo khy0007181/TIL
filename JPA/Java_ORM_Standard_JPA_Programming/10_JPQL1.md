@@ -134,6 +134,7 @@ delete_문 :: = delete_절 [where_절]
 - 엔티티와 속성은 대소문자를 구분한다.
     * Member 엔티티나 m.age 필드
 - JPQL 키워드는 대소문자 구분 하지 않는다.
+    * SELECT, FROM, AS
 - 테이블 이름이 아닌 엔티티 이름을 사용한다.
 - 별칭은 필수이다.(as는 생략가능)
     * Member의 별칭 m
