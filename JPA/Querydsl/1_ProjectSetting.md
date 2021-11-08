@@ -31,11 +31,11 @@
 ### build.gradle 파일 Querydsl 설정 추가
 ```gradle
 plugins {
-	id 'org.springframework.boot' version '2.5.6'
-	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    id 'org.springframework.boot' version '2.5.6'
+    id 'io.spring.dependency-management' version '1.0.11.RELEASE'
         // 추가
-	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
-	id 'java'
+    id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+    id 'java'
 }
 
 group = 'com.example'
@@ -43,45 +43,45 @@ version = '0.0.1-SNAPSHOT'
 sourceCompatibility = '11'
 
 configurations {
-	compileOnly {
-		extendsFrom annotationProcessor
-	}
+    compileOnly {
+    extendsFrom annotationProcessor
+    }
 }
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
-	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
-	implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
         // 추가
-	implementation 'com.querydsl:querydsl-jpa'
-	compileOnly 'org.projectlombok:lombok'
-	runtimeOnly 'com.h2database:h2'
-	annotationProcessor 'org.projectlombok:lombok'
-	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'com.querydsl:querydsl-jpa'
+    compileOnly 'org.projectlombok:lombok'
+    runtimeOnly 'com.h2database:h2'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
 
 test {
-	useJUnitPlatform()
+    useJUnitPlatform()
 }
 
 // 추가
 def querydslDir = "$buildDir/generated/querydsl"
 
 querydsl {
-	jpa = true
-	querydslSourcesDir = querydslDir
+    jpa = true
+    querydslSourcesDir = querydslDir
 }
 sourceSets {
-	main.java.srcDir querydslDir
+    main.java.srcDir querydslDir
 }
 configurations {
-	querydsl.extendsFrom compileClasspath
+    querydsl.extendsFrom compileClasspath
 }
 compileQuerydsl {
-	options.annotationProcessorPath = configurations.querydsl
+    options.annotationProcessorPath = configurations.querydsl
 }
 ```
 <br>
@@ -108,21 +108,21 @@ public class Hello {
 @SpringBootTest
 @Transactional
 class QuerydslApplicationTests {
-	@Autowired
-	EntityManager em;
+    @Autowired
+    EntityManager em;
 
-	@Test
-	void contextLoads() {
-		Hello hello = new Hello();
-		em.persist(hello);
-		JPAQueryFactory query = new JPAQueryFactory(em);
-		QHello qHello = QHello.hello; //Querydsl Q타입 동작 확인
-		Hello result = query
-				.selectFrom(qHello)
-				.fetchOne();
-		Assertions.assertThat(result).isEqualTo(hello);
-		//lombok 동작 확인 (hello.getId())
-		Assertions.assertThat(result.getId()).isEqualTo(hello.getId());
+    @Test
+    void contextLoads() {
+        Hello hello = new Hello();
+        em.persist(hello);
+        JPAQueryFactory query = new JPAQueryFactory(em);
+        QHello qHello = QHello.hello; //Querydsl Q타입 동작 확인
+        Hello result = query
+                .selectFrom(qHello)
+                .fetchOne();
+        Assertions.assertThat(result).isEqualTo(hello);
+        //lombok 동작 확인 (hello.getId())
+    Assertions.assertThat(result.getId()).isEqualTo(hello.getId());
 	}
 }
 ```
@@ -152,7 +152,7 @@ class QuerydslApplicationTests {
             - logback, slf4j
 - 테스트 라이브러리
     - spring-boot-starter-test
-        - junit - 테스트 프레임워크, 스프링 부트 2.2부터 junit5(jupiter)    사용
+        - junit - 테스트 프레임워크, 스프링 부트 2.2부터 junit5(jupiter) 사용
             - 과거 버전은 vintage
         - mockito - 목 라이브러리
         - assertj - 테스트 코드를 좀 더 편하게 작성하게 도와주는 라이브러리
