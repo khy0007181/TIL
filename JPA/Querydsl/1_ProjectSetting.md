@@ -33,7 +33,7 @@
 plugins {
 	id 'org.springframework.boot' version '2.5.6'
 	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
-    // 추가
+        // 추가
 	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
 	id 'java'
 }
@@ -55,7 +55,7 @@ repositories {
 dependencies {
 	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
-    // 추가
+        // 추가
 	implementation 'com.querydsl:querydsl-jpa'
 	compileOnly 'org.projectlombok:lombok'
 	runtimeOnly 'com.h2database:h2'
@@ -151,21 +151,31 @@ class QuerydslApplicationTests {
         - spring-boot-starter-logging
             - logback, slf4j
 - 테스트 라이브러리
-- spring-boot-starter-test
-    - junit - 테스트 프레임워크, 스프링 부트 2.2부터 junit5(jupiter) 사용
-        - 과거 버전은 vintage
-    - mockito - 목 라이브러리
-    - assertj - 테스트 코드를 좀 더 편하게 작성하게 도와주는 라이브러리
-        - [](https://joel-costigliola.github.io/assertj/index.html)
-    - spring-test - 스프링 통합 테스트 지원
-- 핵심 라이브러리
-    - 스프링 MVC
-    - JPA, 하이버네이트
-    - 스프링 데이터 JPA
-    - Querydsl
-- 기타 라이브러리
-    - H2 데이터베이스 클라이언트
-    - 커넥션 풀: 부트 기본은 HikariCP
-    - 로깅 SLF4J & LogBack
-    - 테스트
+    - spring-boot-starter-test
+        - junit - 테스트 프레임워크, 스프링 부트 2.2부터 junit5(jupiter)    사용
+            - 과거 버전은 vintage
+        - mockito - 목 라이브러리
+        - assertj - 테스트 코드를 좀 더 편하게 작성하게 도와주는 라이브러리
+            - [AssertJ](https://joel-costigliola.github.io/ assertj/index.html)
+        - spring-test - 스프링 통합 테스트 지원
+    - 핵심 라이브러리
+        - 스프링 MVC
+        - JPA, 하이버네이트
+        - 스프링 데이터 JPA
+        - Querydsl
+    - 기타 라이브러리
+        - H2 데이터베이스 클라이언트
+        - 커넥션 풀 - 부트 기본은 HikariCP
+        - 로깅 SLF4J & LogBack
+        - 테스트
 <br>
+
+## H2 데이터베이스 설치
+- 개발이나 테스트 용도로 가볍고 편리한 DB, 웹 화면 제공
+- [H2 Database]()
+- H2 Database 버전은 스프링 부트 버전에 맞춘다.
+- 권한 주기 - `chmod 755 h2.sh`
+- 데이터베이스 파일 생성 방법
+    - `jdbc:h2:~/querydsl` (최소 한번)
+    - `~/querydsl.mv.db` 파일 생성 확인
+    - 이후 부터는 `jdbc:h2:tcp://localhost/~/querydsl`로 접속
