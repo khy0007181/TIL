@@ -25,3 +25,106 @@
 - Preferences Annotation Processors 검색 Enable annotation processing 체크 (재시작)
 - 임의의 테스트 클래스를 만들고 @Getter, @Setter 확인
 <br>
+
+## Querydsl 설정과 검증
+
+### build.gradle 파일 Querydsl 설정 추가
+```gradle
+plugins {
+	id 'org.springframework.boot' version '2.5.6'
+	id 'io.spring.dependency-management' version '1.0.11.RELEASE'
+    // 추가
+	id "com.ewerk.gradle.plugins.querydsl" version "1.0.10"
+	id 'java'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+sourceCompatibility = '11'
+
+configurations {
+	compileOnly {
+		extendsFrom annotationProcessor
+	}
+}
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+	implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+	implementation 'org.springframework.boot:spring-boot-starter-web'
+    // 추가
+	implementation 'com.querydsl:querydsl-jpa'
+	compileOnly 'org.projectlombok:lombok'
+	runtimeOnly 'com.h2database:h2'
+	annotationProcessor 'org.projectlombok:lombok'
+	testImplementation 'org.springframework.boot:spring-boot-starter-test'
+}
+
+test {
+	useJUnitPlatform()
+}
+
+// 추가
+def querydslDir = "$buildDir/generated/querydsl"
+
+querydsl {
+	jpa = true
+	querydslSourcesDir = querydslDir
+}
+sourceSets {
+	main.java.srcDir querydslDir
+}
+configurations {
+	querydsl.extendsFrom compileClasspath
+}
+compileQuerydsl {
+	options.annotationProcessorPath = configurations.querydsl
+}
+```
+<br>
+
+### Querydsl 환경설정 검증
+- 검증용 엔티티 생성
+```java
+@Entity
+@Getter @Setter
+public class Hello {
+
+    @Id @GeneratedValue
+    private Long id;
+}
+```
+- 검증용 Q 타입 생성
+    - Gradle - Tasks - build - clean
+    - Gradle - Tasks - other - compileQuerydsl
+    - 완료하면 build.gradle에서 설정한 build/generated에 querydsl폴더가 생긴다.
+    - Q타입은 컴파일 시점에 자동 생성되므로 버전관리(GIT)에 포함하지 않는 것이 좋다. 
+        - 앞서 설정에서 생성 위치를 gradle build 폴더 아래 생성되도록 했기 때문에 이 부분도 자연스럽게 해결된다. (대부분 gradle build 폴더를 git에 포함하지 않는다.)  
+- 테스트 케이스로 실행 검증
+```java
+@SpringBootTest
+@Transactional
+class QuerydslApplicationTests {
+	@Autowired
+	EntityManager em;
+
+	@Test
+	void contextLoads() {
+		Hello hello = new Hello();
+		em.persist(hello);
+		JPAQueryFactory query = new JPAQueryFactory(em);
+		QHello qHello = QHello.hello; //Querydsl Q타입 동작 확인
+		Hello result = query
+				.selectFrom(qHello)
+				.fetchOne();
+		Assertions.assertThat(result).isEqualTo(hello);
+		//lombok 동작 확인 (hello.getId())
+		Assertions.assertThat(result.getId()).isEqualTo(hello.getId());
+	}
+}
+```
+- 만약 테스트 실행 시 error: cannot find symbol가 나오면 Build Tools - Gradle 설정에서 Build and run using과 Run tests using 옵션을 Gradle에서 IntelliJ IDEA로 변경하면 된다.
+<br>
