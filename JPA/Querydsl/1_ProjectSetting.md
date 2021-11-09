@@ -12,6 +12,8 @@
 <br>
 
 ### IntelliJ Gradle 대신에 자바로 바로 실행하기
+<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/ProjectSetting_1.png"></p>
+
 - 최근 IntelliJ 버전은 Gradle로 실행을 하는 것이 기본 설정이다.
     - 실행속도가 느리기 때문에 다음과 같이 변경하면 자바로 바로 실행하므로 좀 더 빨라진다.
     - Preferences Build, Execution, Deployment Build Tools Gradle
@@ -20,6 +22,8 @@
 <br>
 
 ### Lombok 적용
+<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/ProjectSetting_2.png"></p>
+
 - 최근 Lombok이 plugin 설치에서 bundle로 변경되었다.
     - 설치할 필요 없음
 - Preferences Annotation Processors 검색 Enable annotation processing 체크 (재시작)
