@@ -67,3 +67,44 @@ public class QuerydslBasicTest {
 }
 ```
 <br>
+
+## 기본 Q-Type 활용
+
+### Q클래스 인스턴스를 사용하는 2가지 방법
+```java
+QMember qMember = new QMember("m"); // 별칭 직접 지정
+QMember qMember = QMember.member; // 기본 인스턴스 사용
+```
+<br>
+
+### 기본 인스턴스를 static import와 함께 사용
+- 가장 깔끔하고 권장된다.
+- 같은 테이블을 join해야 하는 경우에만 별칭 사용하면 된다.
+```java
+import static com.example.querydsl.entity.QMember.*;
+
+@SpringBootTest
+@Transactional
+public class QuerydslBasicTest {
+
+    ...
+
+    @Test
+    public void startQuerydsl() {
+        Member findMember = queryFactory
+                .select(member)
+                .from(member)
+                .where(member.username.eq("member1"))
+                .fetchOne();
+        assertThat(findMember.getUsername()).isEqualTo("member1");
+    }
+}
+```
+<br>
+
+### Querydsl 사용 시 실행되는 JPQL보는 방법
+- Querydsl은 JPQL의 빌더 역할을 하는 것이다. 
+- 결과적으로 Querydsl을 사용하는 코드는 JPQL이 된다.
+- application.yml에 파일에 코드를 추가하면 확인할 수 있다.
+    - `spring.jpa.properties.hibernate.use_sql_comments: true`
+<br>
