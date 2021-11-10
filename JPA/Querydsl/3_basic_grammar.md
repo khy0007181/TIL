@@ -170,3 +170,42 @@ public void search() {
 }
 ```
 <br>
+
+## 결과 조회
+- `fetch()` : 리스트 조회, 데이터 없으면 빈 리스트 반환
+- `fetchOne()` : 단 건 조회
+    - 결과가 없으면 : null
+    - 결과가 둘 이상이면 : com.querydsl.core.NonUniqueResultException
+- `fetchFirst()` : limit(1).fetchOne()
+- `fetchResults()` : 페이징 정보 포함, total count 쿼리 추가 실행
+    - `getResult()`, `getLimit()` ... 등으로 값을 받아서 사용
+    - 쿼리가 2번 나간다.
+    - 참고) paging 쿼리가 복잡할 경우, 컨텐츠를 가져오는 쿼리와 실제 totalCount를 가지고 오는 쿼리가 다를 경우가 있다. 
+        - 성능 때문에 total을 가져오는 쿼리를 더 간단하게 만든다. 따라서 복잡할 경우 사용하면 안되고 쿼리를 따로 날려야 한다.
+- `fetchCount()` : count 쿼리로 변경해서 count 수 조회
+```java
+@Test
+public void resultFetch() {
+    //List
+    List<Member> fetch = queryFactory
+            .selectFrom(member)
+            .fetch();
+    //단건
+    Member findMember1 = queryFactory
+            .selectFrom(member)
+            .fetchOne();
+    //처음 한 건 조회
+    Member findMember2 = queryFactory
+            .selectFrom(member)
+            .fetchFirst();
+    //페이징에서 사용
+    QueryResults<Member> results = queryFactory
+            .selectFrom(member)
+            .fetchResults();
+    //count 쿼리로 변경
+    long count = queryFactory
+            .selectFrom(member)
+            .fetchCount();
+}
+```
+<br>
