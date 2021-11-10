@@ -15,8 +15,8 @@
 - 최근 IntelliJ 버전은 Gradle로 실행을 하는 것이 기본 설정이다.
     - 실행속도가 느리기 때문에 다음과 같이 변경하면 자바로 바로 실행하므로 좀 더 빨라진다.
     - Preferences Build, Execution, Deployment Build Tools Gradle
-    - Build and run using: Gradle IntelliJ IDEA
-    - Run tests using: Gradle IntelliJ IDEA
+    - Build and run using: Gradle -> IntelliJ IDEA
+    - Run tests using: Gradle -> IntelliJ IDEA
 <p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/ProjectSetting_1.png"></p>
 
 <br>
@@ -183,3 +183,44 @@ class QuerydslApplicationTests {
     - `jdbc:h2:~/querydsl` (최초 한번)
     - `~/querydsl.mv.db` 파일 생성 확인
     - 이후 부터는 `jdbc:h2:tcp://localhost/~/querydsl`로 접속
+<br>
+
+## 스프링 부트 설정 - JPA, DB
+- application.yml 파일 생성
+    - 쿼리 파라미터 로그 남기기
+        - 설정 파일
+            - org.hibernate.type 설정
+        - 외부 라이브러리
+            - [https://github.com/gavlyukovskiy/spring-boot-data-source-decorator](https://github.com/gavlyukovskiy/spring-boot-data-source-decorator) 
+            - 스프링 부트 사용 시 build.gradle에 의존성 추가만 하면 된다.
+                - `implementation 'com.github.gavlyukovskiy:p6spy-spring-boot-starter:1.5.8'`
+```yml
+spring:
+   datasource:
+     url: jdbc:h2:tcp://localhost/~/querydsl
+     username: sa
+     password:
+     driver-class-name: org.h2.Driver
+
+  jpa:
+    hibernate:
+      ddl-auto: create
+    properties:
+      hibernate:
+        # show_sql: true
+        format_sql: true
+
+logging.level:
+  org.hibernate.SQL: debug
+# org.hibernate.type: trace
+```
+- 테스트에 Transaction이 있으면 기본적으로 rollback하므로 `@Commit` 추가
+```java
+@SpringBootTest
+@Transactional
+@Commit
+class QuerydslApplicationTests {
+	...
+}
+```
+<br>
