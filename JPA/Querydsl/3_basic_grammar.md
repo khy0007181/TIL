@@ -8,7 +8,7 @@
     - 코드이므로 오류 발생 시 컴파일 시점에 발생
     - 파라미터 바인딩이 자동 처리된다.
     - JPAQueryFactory를 필드 레벨로 사용할 수 있다.
-        - 동시성 문제를 걱정하지 않아도 된다.
+        - 트랜잭션 마다 별도의 영속성 컨텍스트를 제공하기 때문에, 동시성 문제는 걱정하지 않아도 된다.
             - 멀티스레드 환경에서도 사용 가능
             - 문제없게 설계되어 있다. (Transaction 별로 바인딩되어 있다.)
 ```java
@@ -19,10 +19,11 @@ public class QuerydslBasicTest {
     @Autowired
     EntityManager em;
 
-    JPAQueryFactory queryFactory = new JPAQueryFactory(em);
+    JPAQueryFactory queryFactory;
 
     @BeforeEach
     public void before() {
+        queryFactory = new JPAQueryFactory(em);
         Team teamA = new Team("teamA");
         Team teamB = new Team("teamB");
         em.persist(teamA);
