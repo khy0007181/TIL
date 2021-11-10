@@ -108,3 +108,65 @@ public class QuerydslBasicTest {
 - application.yml에 파일에 코드를 추가하면 확인할 수 있다.
     - `spring.jpa.properties.hibernate.use_sql_comments: true`
 <br>
+
+## 검색 조건 쿼리
+
+### 기본 검색 쿼리
+- 검색 조건은 `.and()`, `or()`를 메서드 체인으로 연결할 수 있다.
+- 참고) select와 from을 selectFrom으로 합칠 수 있다.
+```java
+@Test
+public void search() {
+    Member findMember = queryFactory
+            .selectFrom(member)
+            .where(member.username.eq("member1")
+                    .and(member.age.eq(10)))
+            .fetchOne();
+    assertThat(findMember.getUsername()).isEqualT("member1");
+}
+```
+<br>
+
+### JPQL이 제공하는 모든 검색 조건 제공
+```java
+member.username.eq("member1") // username = 'member1'
+member.username.ne("member1") // username != 'member1'
+member.username.eq("member1").not() // username != 'member1'
+
+member.username.isNotNull() // username is not null
+
+member.age.in(10, 20) // age in (10, 20)
+member.age.notIn(10, 20) // age not in (10, 20)
+member.age.between(10,30) // between 10, 30
+
+member.age.goe(30) // age >= 30
+member.age.gt(30) // age > 30
+member.age.loe(30) // age <= 30
+member.age.lt(30) // age < 30
+
+member.username.like("member%") // like 검색
+member.username.contains("member") // like ‘%member%’ 검색
+member.username.startsWith("member") // like ‘member%’ 검색
+
+...
+
+```
+<br>
+
+### AND 조건을 파라미터로 처리하는 방법
+- and를 사용하지 않고 괄호 안에서 `,`로 구분
+- and만 사용할 경우 유용하다.
+```java
+@Test
+public void search() {
+    Member findMember = queryFactory
+            .selectFrom(member)
+            .where(
+                    member.username.eq("member1"),
+                    member.age.eq(10)
+            )
+            .fetchOne();
+    assertThat(findMember.getUsername()).isEqualT("member1");
+}
+```
+<br>
