@@ -3,7 +3,7 @@
 <br>
 
 ### 목차
-- [0. Querydsl 소개]()
+- [0. Querydsl 소개](https://github.com/qlalzl9/TIL/blob/master/JPA/Querydsl/0_Querydsl_Intro.md)
 - [1. 프로젝트 환경설정]()
 - [2. 예제 도메인 모델]()
 - [3. 기본 문법]()
