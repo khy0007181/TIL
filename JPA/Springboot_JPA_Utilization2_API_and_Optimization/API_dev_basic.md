@@ -42,16 +42,16 @@ public class MemberApiController {
 ```
 - 실행 후 Postman으로 확인하면 잘 저장되고 id가 1로 넘어 온 것을 볼 수 있다.
     * DB 쿼리 또한 INSERT로 잘 들어간 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_1.jpg"></p>
 
 - Postman에서 name을 빼고 넣어도 저장이 된다.
     * Member 엔티티에서 name에 제약조건을 넣지 않았기 때문이다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_2.jpg"></p>
 
 - 따라서 Member 엔티티의 name에 `@NotEmpty`를 추가하고 실행한 후 Postman에서 name을 빼고 보내면 스프링 부트가 기본으로 설정해 놓은 에러가 발생한다.
     * MemberApiController의 `@Valid` 애노테이션이 javax.validation 검증을 하기 때문이다.
     * 이름을 넣어야만 정상적으로 실행된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_3.jpg"></p>
 
 - 그러나 이 방법에는 여러가지 문제가 있다.
     * 프레젠테이션 계층을 위한 검증 로직이 엔티티에 들어가 있으면 문제가 있다.
@@ -86,13 +86,13 @@ public class MemberApiController {
 }
 ```
 - 실행 후 Postman으로 확인하면 잘 저장되고 id도 잘 넘어온 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_4.jpg"></p>
 
 - 첫 번째 방법의 유일한 방법은 엔티티를 쓰기 때문에 클래스를 추가로 만들지 않아도 된다는 것이다.
 - DTO를 쓴다면 엔티티와 API 스펙이 명확하게 분리되어 엔티티가 변경되어도 API 스펙이 바뀌지 않는다.
     * 만약 Member엔티티의 name을 username으로 바꾼다면 컴파일 오류가 나서 알려준다.
     * `setName`을 `setUsername`으로만 바꿔주면 스펙 변화없이 끝이다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_5.jpg"></p>
 
 - **API를 만들 때는 엔티티를 절대 사용하지 말고 DTO를 생성해서 사용하자!**
 <br>
@@ -154,7 +154,7 @@ public class MemberService {
 ```
 - 실행해서 Postman에 회원을 등록하고 수정하면 다음과 같이 수정된 결과를 확인할 수 있다.
     * 쿼리도 UPDATE 쿼리가 나가서 수정됐다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_6.jpg"></p>
 
 <br>
 
@@ -183,7 +183,7 @@ public class MemberApiController {
 }
 ```
 - 실행 후 조회하면 다음과 같이 회원 목록이 조회된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_7.jpg"></p>
 
 - 그러나 이 방법에는 등록 때와 마찬가지로 여러가지 문제가 있다.
     * 엔티티에 프레젠테이션 계층을 위한 로직이 추가된다.
@@ -234,4 +234,4 @@ public class MemberApiController {
 }
 ```
 - 실행 후 조회하면 다음과 같이 DTO가 감싸고 있고 name만 조회되었다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_basic_8.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_basic_8.jpg"></p>

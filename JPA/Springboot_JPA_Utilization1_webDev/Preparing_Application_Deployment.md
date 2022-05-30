@@ -1,7 +1,7 @@
 # 애플리케이션 구현 준비
 
 ## 구현 요구사항
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/Preparing_Application_Deployment_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/Preparing_Application_Deployment_1.jpg"></p>
 
 - 회원 기능
     * 회원 등록
@@ -23,7 +23,7 @@
 <br>
 
 ## 애플리케이션 아키텍쳐
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/Preparing_Application_Deployment_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/Preparing_Application_Deployment_2.jpg"></p>
 
 <br>
 

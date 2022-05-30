@@ -7,7 +7,7 @@
 - 클라이언트의 요청에 동적으로 작동하고, 응답은 html을 이용한다.
 - jsp는 서블릿으로 변환되어 실행된다.
 - MVC 패턴에서 View로 이용된다.
-![](https://github.com/qlalzl9/TIL/blob/master/Servlet_JSP/img/Servlet_JSP_1.png)
+![](https://github.com/khy07181/TIL/blob/master/Servlet_JSP/img/Servlet_JSP_1.png)
 
 - xxx.jsp 파일은 실행될 때 xxx_jsp.java로 변환되고, xxx_jsp.class로 컴파일되어 html로 응답한다.
 - .java파일과 .class파일은 tomcat설치폴더/work/catalina/localhost/프로젝트명 폴더에 저장된다.

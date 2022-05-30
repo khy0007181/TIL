@@ -3,7 +3,7 @@
 - 문자열에서 검색할 문자열의 접두사 = 접미사가 될 수 있는 가장 긴 부분을 찾아 그 위치에서부터 다시 문자열 검색을 한다.
 - 시간복잡도 : O(문자열의 길이 + 검색할 문자열의 길이)
 - 검색 과정
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/KMP_1.jpg" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Algorithm/img/KMP_1.jpg" width="600px"></p>
 
 ## 구현
 ```java

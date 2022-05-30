@@ -128,7 +128,7 @@ public class Profile {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_1.jpg"></p>
 
 <br>
 
@@ -275,8 +275,8 @@ public class SettingsController {
 </div>
 ```
 - 실행하면 다음과 같이 프로필을 수정할 때 메세지도 나오고 수정도 성공적으로 완료된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_2.jpg"></p>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_3.jpg"></p>
 
 <br>
 
@@ -595,8 +595,8 @@ public class AccountService implements UserDetailsService {
     width="24" height="24" class="rounded border"/>
 ```
 - 실행하면 다음과 같이 프로필 이미지를 잘라서 수정할 수 있고 홈 화면에서도 네이게이션 메뉴에 프로필 이미지가 변경된 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_4.jpg"></p>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_5.jpg"></p>
 
 <br>
 
@@ -646,7 +646,7 @@ public class PasswordFormValidator implements Validator {
 ```
 - 패스워드 수정 맵핑
     * `@InitBinder("passwordForm")`
-        - [회원가입 폼 서브밋 검증](https://github.com/qlalzl9/TIL/blob/a3359d29c14b45d0d57404d640d7597fa395166f/Spring_SpringBoot/devWebservice_Based_on_Spring_and_JPA/signUp.md#%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%ED%8F%BC-%EC%84%9C%EB%B8%8C%EB%B0%8B-%EA%B2%80%EC%A6%9D)에서와 같이 커스텀 검증을 수행한다.
+        - [회원가입 폼 서브밋 검증](https://github.com/khy07181/TIL/blob/a3359d29c14b45d0d57404d640d7597fa395166f/Spring_SpringBoot/devWebservice_Based_on_Spring_and_JPA/signUp.md#%ED%9A%8C%EC%9B%90%EA%B0%80%EC%9E%85-%ED%8F%BC-%EC%84%9C%EB%B8%8C%EB%B0%8B-%EA%B2%80%EC%A6%9D)에서와 같이 커스텀 검증을 수행한다.
     * `@GetMapping(SETTINGS_PASSWORD_URL)`
         - model에 account와 new PasswordForm()를 넘겨주고
         - settings/profile 뷰로 return
@@ -771,7 +771,7 @@ public class AccountService implements UserDetailsService {
 </html>
 ```
 - 실행 후 패스워드를 수정하면 다음과 같이 성공적으로 변경되는 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_6.jpg"></p>
 
 <br>
 
@@ -841,7 +841,7 @@ class SettingsControllerTest {
 ### 구현
 - 알림을 받을지 설정할 폼 객체 생성
     * profile의 경우와 마찬가지로 기본 생성자가 없으면 바인딩 받을 때 NullPointException이 발생하므로 `@NoArgsConstructor` 추가한다.
-        - [참고 링크](https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/devWebservice_Based_on_Spring_and_JPA/account_settings.md#%ED%94%84%EB%A1%9C%ED%95%84-%EC%88%98%EC%A0%95-%EC%B2%98%EB%A6%AC)
+        - [참고 링크](https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/devWebservice_Based_on_Spring_and_JPA/account_settings.md#%ED%94%84%EB%A1%9C%ED%95%84-%EC%88%98%EC%A0%95-%EC%B2%98%EB%A6%AC)
 ```java
 @Data
 @NoArgsConstructor
@@ -1003,7 +1003,7 @@ public class SettingsController {
 </html>
 ```
 - 실행하면 다음과 같이 알림 설정을 기능을 사용할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_7.jpg"></p>
 
 <br>
 
@@ -1305,7 +1305,7 @@ public class AccountService implements UserDetailsService {
 </html>
 ```
 - 실행해서 닉네임을 수정하면 다음과 같이 성공적으로 변경되는 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_8.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_8.jpg"></p>
 
 <br>
 
@@ -1548,7 +1548,7 @@ public class AccountService implements UserDetailsService {
 </html>
 ```
 - 실행해서 패스워드 없이 로그인을 하면 다음과 같이 성공적으로 동작한다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_9.jpg"></p>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/account_settings_10.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_9.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/account_settings_10.jpg"></p>
 
 <br>

@@ -4,13 +4,13 @@
 - 컬렉션(다수의 객체)을 다루기 위한 표준화된 프로그래밍 방식이다.
 - 컬렉션을 쉽고 편리하게 다룰 수 있는 다양한 클래스를 제공한다
 - java.util패키지에 포함되어 있으며 JDK1.2부터 제공되었다
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_1.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_1.png)
 
 <br>
 
 ### 1. List 인터페이스
 - 중복을 허용하면서 저장 순서가 유지되는 컬렉션을 구현하는 데 사용된다.
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_2.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_2.png)
 
 <br>
 
@@ -20,10 +20,10 @@
 - Object배열을 이용해서 데이터를 순차적으로 저장한다.
 <details>
 <summary>ArrayList에 저장된 객체의 삭제 과정</summary>
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_5.png)
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_6.png)
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_7.png)
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_8.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_5.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_6.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_7.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_8.png)
 
 ※ 마지막 데이터를 삭제하는 경우, ①의 과정(배열의 복사)은 필요없다.
 
@@ -33,7 +33,7 @@ for(int i = 0; i < list.size(); i++) {
 	list.remove(i);
 }
 ```
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_9.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_9.png)
 
 
 (2) ArrayList에 저장된 마지막 객체부터 삭제하는 경우(배열 복사 발생안함)
@@ -42,12 +42,12 @@ for(int i = list.size()-1; i <= 0; i--) {
 	list.remove(i);
 }
 ```
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_10.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_10.png)
 </details>
 <br>
 
 ### 3. LinkedList
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_3.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_3.png)
 - 실제로 LinkedList클래스는 이름과 달리 linked list가 아닌 doubly linked list로 구현되어 있다.
 - 순차적으로 추가/삭제하는 경우에는 ArrayList가 LinkedList보다 빠르다
 - 중간 데이터를 추가/삭제하는 경우에는 LinkedList가 ArrayList보다 빠르다.
@@ -116,4 +116,4 @@ while(it.hasNext()) {
 <br>
 
 ### 12. 컬렉션 클래스 정리
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/11_4.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/11_4.png)

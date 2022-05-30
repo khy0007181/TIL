@@ -69,13 +69,13 @@ void setDaemon(boolean on) 	// 쓰레드를 데몬 쓰레드로 또는 사용자
 ### 6. 쓰레드의 실행제어
 
 #### 6.1 쓰레드의 상태
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/13_1.png)
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/13_2.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/13_1.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/13_2.png)
 
 <br>
 
 #### 6.2 쓰레드의 스케쥴링
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/13_3.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/13_3.png)
 - sleep(long millis) : 일정 시간 동안 쓰레드를 멈추게 한다.
 ```java
 static void sleep(long millis)

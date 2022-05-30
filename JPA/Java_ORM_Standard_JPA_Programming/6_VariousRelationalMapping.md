@@ -41,7 +41,7 @@
 <br>
 
 ### 다대일 관계 단방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_1.jpg"></p>
 
 - JPA에서 지원하는 `@ManyToOne` 어노테이션을 사용해서 다대일 관계를 맵핑한다.
 - `@JoinColumn`은 외래키를 맵핑할 때 사용한다.
@@ -65,7 +65,7 @@ public class Member {
 <br>
 
 ### 다대일 관계 양방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_2.jpg"></p>
 
 - 다대일 관계에서 단방향 맵핑을 진행하고, 양방향 맵핑을 진행할 때 반대쪽에서 일대다 단방향 맵핑을 해주면 된다.
     * 객체에서 컬렉션만 추가해주면 된다.
@@ -95,7 +95,7 @@ public class Team {
 <br>
 
 ### 일대다 단방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_3.jpg"></p>
 
 - Team은 Member를 참조하는데 Member는 Team을 참조하지 않아도 된다는 설계가 나올 순 있다.
     * 객체 입장에서는 충분히 나올 수 있는 설계이다.
@@ -130,7 +130,7 @@ em.persist(team);
 tx.commit();
 ```
 - 실행하면 다음과 같이 member와 team INSERT 쿼리문이 나가고 트랜잭션 커밋 시점에 MEMBER 테이블을 UPDATE 쿼리가 한번 더 나간다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_4.jpg"></p>
 
 <br>
 
@@ -148,7 +148,7 @@ tx.commit();
 <br>
 
 ### 일대다 양방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_5.jpg"></p>
 
 - 스펙 상 가능한 것은 아니지만 억지로 하려면 가능하다.
 - 아래와 같이 @ManyToOne과 @JoinColumn을 사용해서 연관관계를 맵핑하면, 다대일 단방향 맵핑이 되어버린다. 근데 반대쪽 Team에서 이미 일대다 단방향 맵핑이 설정되어있다. 이런 상황에서는 두 엔티티에서 모두 테이블의 FK 키를 관리 하게 되는 상황이 벌어진다.
@@ -188,7 +188,7 @@ public class Member {
 <br>
 
 ### 일대일 - 주 테이블에 외래키 단방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_6.jpg"></p>
 
 - Member가 하나의 Locker를 가지고 반대로 Locker도 하나의 Member만 가질 수 있다고 비즈니스 룰을 가정할 때, 일대일 연관관계가 된다.
 - MEMBER에 LOCKER_ID를 외래키로 가지고 UNI 제약조건을 걸어도 되고, 반대로 LOCKER에 MEMBER_ID를 외래키로 가지고 UNI 제약조건을 걸어도 된다.
@@ -221,7 +221,7 @@ public class Locker {
 <br>
 
 ### 일대일 - 주 테이블에 외래키 양방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_7.jpg"></p>
 
 - 주 테이블에 외래키 단방향 맵핑에서 Locker 클래스에 member를 추가하면 된다.
     * 읽기 전용이 된다.
@@ -260,7 +260,7 @@ public class Locker {
 <br>
 
 ### 일대일 - 대상 테이블에 외래키 단방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_8.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_8.jpg"></p>
 
 - 대일관계에서 대상 테이블에 외래키를 저장하는 단방향 관계는 JPA에서 지원도 방법도 없다.
     * Member에 있는 locker로 LOCKER테이블의 MEMBER_ID(FK)를 관리할 수 없다.
@@ -272,7 +272,7 @@ public class Locker {
 <br>
 
 ### 일대일 - 대상 테이블에 외래키 단방향 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_9.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_9.jpg"></p>
 
 - 일대일 주 테이블에 외래키 양방향 맵핑을 반대로 뒤집었다고 생각하면 된다.
 - Locker의 member를 연관관계의 주인으로 잡고 LOCKER의 MEMBER_ID와 맵핑을 하면 된다.
@@ -305,7 +305,7 @@ public class Locker {
 <br>
 
 ## 다대다[N:M]
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_10.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_10.jpg"></p>
 
 - 실무에서는 사용하지 않는게 좋다.
 - 관계형 데이터베이스는 정규화된 테이블 2개로 다대다 관계를 표현할 수 없다.
@@ -314,7 +314,7 @@ public class Locker {
     * ORM 입장에서는 객체는 되고 테이블은 안되는 것을 지원해줘야 한다.
     * 따라서, 아래의 그림에서와 같이 객체는 Member와 Product 서로의 list를 가질 수 있기 때문에
     * 그림의 테이블처럼 일대다, 다대일 맵핑을 연결 테이블을 넣어서 맵핑해준다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_11.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_11.jpg"></p>
 
 - `@ManyToMany` 어노테이션을 사용하고  `@JoinTable`로 연결 테이블을 지정해줄 수 있다.
 <br>
@@ -367,7 +367,7 @@ public class Product {
 <br>
 
 ### 다대다 맵핑의 한계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_12.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_12.jpg"></p>
 
 - 편리해 보이지만 실무에서 사용할 수 없다.
 - 연결 테이블이 단순히 연결만 하고 끝나지 않는다.
@@ -377,7 +377,7 @@ public class Product {
 <br>
 
 ### 다대다 한계 극복
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_13.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_VariousRelationalMapping_13.jpg"></p>
 
 - `@ManyToMany`를 `@OneToMany`와 `@ManyToOne`으로 바꾸고
 - 연결 테이블용 엔티티를 추가한다. (연결 테이블을 엔티티로 승격)

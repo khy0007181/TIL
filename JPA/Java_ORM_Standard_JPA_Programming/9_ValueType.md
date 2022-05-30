@@ -46,7 +46,7 @@
 - 임베디드 타입의 값이 null이라면, 맵핑한 컬럼 값은 모두 null로 저장 된다.
 
 ### 예제로 이해하기
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_ValueType_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_ValueType_1.jpg"></p>
 
 - 회원 엔티티는 이름, 근무 시작일, 근무 종료일, 주소 도시, 주소 번지, 주소 우편번호를 가진다. 
     * 공통적인 속성들이 보인다.
@@ -72,7 +72,7 @@
 <br>
 
 ### 임베디드 타입과 테이블 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_ValueType_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_ValueType_2.jpg"></p>
 
 - DB입장에서는 바뀔 것이 없다.
     * DB는 데이터를 잘 관리하는 것이 목적이기 때문에, 그림과 같이 설계되는 것이 맞다.
@@ -124,7 +124,7 @@ public class Address {
 <br>
 
 ### 임베디드 타입과 연관관계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_ValueType_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_ValueType_3.jpg"></p>
 
 - Member 엔티티는 Address와 PhoneNumber라는 임베디드 값 타입을 가진다.
 - Address는 Zipcode라는 임베디드 타입을 가지고 있다.(임베디드 타입이 임베디드 타입을 가질 수 있다.)
@@ -311,7 +311,7 @@ Address b = new Address("서울시");
 - 값 타입을 하나 이상 저장할 때 사용한다.
 - `@ElementCollection`, `@CollectionTable` 어노테이션을 사용해서 맵핑한다.
 - 데이터베이스는 컬렉션을 같은 테이블에 저장할 수 없기 때문에 컬렉션을 저장하기 위한 별도의 테이블이 필요하다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_ValueType_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_ValueType_3.jpg"></p>
 
 - 예를 들어 Member가 그림과 같은 값 타입을 가지고 있다고 가정하자.
 - 그런데 DB테이블로 구현할 때 문제가 발생한다.

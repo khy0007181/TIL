@@ -71,6 +71,6 @@ public class InitDb {
 }
 ```
 - 다음과 같이 데이터가 잘 들어간 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_Intro_1.jpg"></p>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_Intro_2.jpg"></p>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_dev_Intro_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_Intro_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_Intro_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_dev_Intro_3.jpg"></p>

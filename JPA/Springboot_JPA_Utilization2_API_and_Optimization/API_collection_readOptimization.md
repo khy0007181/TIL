@@ -27,14 +27,14 @@ public class OrderApiController {
 }
 ```
 - 실행 후 조회하면 다음과 같이 원래 데이터에서 컬렉션이 추가된 조회 정보가 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_collection_readOptimization_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_collection_readOptimization_1.jpg"></p>
 
 - 물론 양방향 연관관계에서 둘 중에 하나는 @JsonIgnore해야한다.
 - 지금까지 배워왔듯이 이 방법은 사용하면 안된다.
 <br>
 
 ## V2. 엔티티를 DTO로 변환
-- [지난 단원](https://github.com/qlalzl9/TIL/blob/master/JPA/Springboot_JPA_Utilization2_API_and_Optimization/API_delayLoading_and_readOptimization.md#v2-%EC%97%94%ED%8B%B0%ED%8B%B0%EB%A5%BC-dto%EB%A1%9C-%EB%B3%80%ED%99%98)에서 한 것처럼 OrderDto를 만들어서 orderItems를 추가하면 된다고 생각하면 안된다.
+- [지난 단원](https://github.com/khy07181/TIL/blob/master/JPA/Springboot_JPA_Utilization2_API_and_Optimization/API_delayLoading_and_readOptimization.md#v2-%EC%97%94%ED%8B%B0%ED%8B%B0%EB%A5%BC-dto%EB%A1%9C-%EB%B3%80%ED%99%98)에서 한 것처럼 OrderDto를 만들어서 orderItems를 추가하면 된다고 생각하면 안된다.
 - orderItems 또한 엔티티가 노출되지 않도록 OrderItemDto를 만들어서 엔티티에 대한 의존을 완전히 분리 시켜야한다.
     * 참고) Address 같은 값 타입은 변하지 않으므로 상관없다.
 ```java
@@ -223,7 +223,7 @@ public class OrderRepository {
 }
 ```
 - 실행해서 offset과 limit을 입력해 조회하면 다음과 같다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_collection_readOptimization_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_collection_readOptimization_2.jpg"></p>
 
 - 최적화 옵션 : application.yml 파일에 다음과 같이 default_batch_fetch_size를 1000으로 설정하면 한번에 DB에 있는 IN 쿼리를 가져온다.
     * 참고)

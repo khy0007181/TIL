@@ -30,7 +30,7 @@ spring.datasource.password=testpass
 - Gmail 서버에 App Passwords 발급받기
     * 2차 인증을 설정하고
     * 앱 비밀번호를 설정하면 된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/db_email_setting_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/db_email_setting_1.jpg"></p>
 
 - application-dev.properties 파일에 설정
 ```properties
@@ -46,7 +46,7 @@ spring.mail.properties.mail.smtp.timeout=5000
 spring.mail.properties.mail.smtp.starttls.enable=true
 ```
 - 실행해서 가입하면 다음과 같이 실제 이메일로 인증 메일이 온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/db_email_setting_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/db_email_setting_2.jpg"></p>
 
 - 그러나 Gmail SMTP는 하루에 보낼 수 있는 이메일이 한정되어 있어 실제 운영환경에 쓰기에는 적합하지 않다.
 - 대체 서비스 
@@ -316,7 +316,7 @@ app.host=http://localhost:8080
 - app.host라는 값을 스프링 부트가 제공하는 기능을 사용해서 받아온다.
     * `@ConfigurationProperties`를 사용해 host를 바인딩 받아온다.
     * 따라서 application.properties에 있는 app.host값을 다른 곳에서 주입받아 사용할 수 있다.
-    * [참고 링크](https://github.com/qlalzl9/TIL/blob/d15439aae508aebb7e4f1ce131b133fc66a6c5d2/Spring_SpringBoot/SpringBootCore.md#type-safe%ED%95%9C-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-configurationproperties)
+    * [참고 링크](https://github.com/khy07181/TIL/blob/d15439aae508aebb7e4f1ce131b133fc66a6c5d2/Spring_SpringBoot/SpringBootCore.md#type-safe%ED%95%9C-%ED%94%84%EB%A1%9C%ED%8D%BC%ED%8B%B0-configurationproperties)
 ```java
 @Data
 @Component
@@ -328,4 +328,4 @@ public class AppProperties {
 }
 ```
 - 이제 실행해서 가입 후 확인하면 다음과 같이 이메일로 html이 오고 링크를 클릭하면 이메일 인증이 된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/db_email_setting_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/db_email_setting_3.jpg"></p>

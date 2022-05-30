@@ -129,7 +129,7 @@ FROM MEMBER M  INNER JOIN TEAM T ON M.TEAM_ID = T.ID
 <br>
 
 #### 코드 실습
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_JPQL2_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_JPQL2_1.jpg"></p>
 
 - fetch join을 사용하지 않은 경우
     * Member와 Team은 `@ManyToOne` 맵핑으로 Team은 프록시로 들어와 지연 로딩이 일어난다.
@@ -186,7 +186,7 @@ WHERE T.NAME = '팀A'
 <br>
 
 #### 코드 실습
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_JPQL2_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_JPQL2_2.jpg"></p>
 
 - 컬렉션에 fetch join을 사용
     * 결과가 팀은 2개인데 결과는 3개가 찍힌다.(일대다 join이라서 데이터가 뻥튀기 된다.)
@@ -223,7 +223,7 @@ for (Team team : result) {
         * SQL의 DISTINCT은 완전히 동일해야 중복 제거를 한다.(예제는 ID도 다르고 NAME도 다르다.)
     * 따라서 JPA에서는 JPQL의 DISTINCT가 추가로 애플리케이션에서 중복 제거를 시도한다.
     * 시도해서 같은 식별자를 가진 Team 엔티티를 제거해버린다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_JPQL2_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_JPQL2_3.jpg"></p>
 
 ```java
 String query = "select distinct t from Team t join fetch t.members";
@@ -293,7 +293,7 @@ String query = "select t from Team t join t.members m where m.age > 10";
 <br>
 
 ## 다형성 쿼리
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_JPQL2_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_JPQL2_3.jpg"></p>
 
 - 그림과 같이 다형적으로 설계를 한 경우 JPA는 특수 기능을 지원한다.
 - 조회 대상을 특정 자식으로 한정 지을 수 있다.

@@ -305,13 +305,13 @@ public class MemberController {
 }
 ```
 - 실행 후 정상적으로 값을 입력하면 다음과 같이 INSERT쿼리가 나가고 DB에도 데이터가 저장된 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/web_layer_development_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/web_layer_development_1.jpg"></p>
 
 - 실행 후 이름을 입력하지 않으면 BindingResult에 의해 다음과 같이 members/createMemberForm으로 돌아가면서 에러를 알린다.
     * BindingResult를 사용하지 않았다면 스프링 부트의 기본 에러페이지가 나왔을 것이다.
     * 빨간색으로 에러 표시가 되면서 MemberForm에서 `@NotEmpty`의 message가 출력된다. 
     * 자동으로 되는 것이 아니라 createMemberForm.html에서 thymeleaf문법으로 이름 input 태그에서 설정했기 때문에 랜더링이 된 것이다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/web_layer_development_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/web_layer_development_2.jpg"></p>
 
 - 참고로 Member 엔티티를 직접 쓰지 않고 Form을 만들어서 쓰는 이유는 다음과 같다.
     * Controller에서 넘어올 때의 Validation과 실제 도메인이 원하는 Validation이 다를 수 있다.
@@ -381,7 +381,7 @@ public class MemberController {
 </html>
 ```
 - 실행해서 회원 등록 후 회원 목록을 조회하면 다음과 같이 목록이 조회되는 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/web_layer_development_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/web_layer_development_3.jpg"></p>
 
 <br>
 
@@ -474,7 +474,7 @@ public class ItemController {
 </html>
 ```
 - 실행 후 다음과 같은 상품 등록 화면에서 상품 등록을 하면 DB에 잘 저장되는 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/web_layer_development_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/web_layer_development_4.jpg"></p>
 
 <br>
 
@@ -540,7 +540,7 @@ public class ItemController {
 </html>
 ```
 - 실행해서 상품을 등록한 뒤 상품 목록을 조회하면 다음과 같이 결과가 나오는 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/web_layer_development_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/web_layer_development_5.jpg"></p>
 
 <br>
 
@@ -552,7 +552,7 @@ public class ItemController {
     * `updateItemForm()`
         - `@PathVariable`
             * itemId는 변경될 수 있으므로 사용한다.
-            * [@PathVariable](https://github.com/qlalzl9/TIL/blob/ff09a96af100ff09157f5b634e8c6c77c71739a8/Spring_SpringBoot/SpringMVCUtilization.md#pathvariable)
+            * [@PathVariable](https://github.com/khy07181/TIL/blob/ff09a96af100ff09157f5b634e8c6c77c71739a8/Spring_SpringBoot/SpringMVCUtilization.md#pathvariable)
         - 수정 버튼을 선택하면 /items/{itemId}/edit url을 GET 방식으로 요청한다.
         - `itemService.findOne(itemId);`
             * 수정할 상품을 조회
@@ -562,7 +562,7 @@ public class ItemController {
         - 컨트롤러에 파라미터로 넘어온 item 엔티티 인스턴스는 준영속 상태로, 영속성 컨텍스트의 지원을 받을 수 없고 데이터를 수정해도 변경 감지 기능은 동작하지 않는다.
         - `@ModelAttribute`
             * 생략가능하다.
-            * [@ModelAttribute](https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/SpringMVCUtilization.md#%ED%95%B8%EB%93%A4%EB%9F%AC-%EB%A9%94%EC%86%8C%EB%93%9C-5-modelattribute)
+            * [@ModelAttribute](https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/SpringMVCUtilization.md#%ED%95%B8%EB%93%A4%EB%9F%AC-%EB%A9%94%EC%86%8C%EB%93%9C-5-modelattribute)
 ```java
 @Controller
 @RequiredArgsConstructor
@@ -645,7 +645,7 @@ public class ItemController {
 </html>
 ```
 - 실행해서 상품을 등록하고 수정하면 다음과 같이 수정 완료되어 상품 목록이 조회되는 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/web_layer_development_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/web_layer_development_6.jpg"></p>
 
 <br>
 
@@ -703,7 +703,7 @@ public class ItemController {
 <br>
 
 ### 병합
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/web_layer_development_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/web_layer_development_7.jpg"></p>
 
 - 병합 동작 방식
     1. `merge()`를 실행한다. 
@@ -764,7 +764,7 @@ public String updateItem(@ModelAttribute("form") BookForm form) {
         - 주문할 회원과 상품, 수량을 선택해서 Submit 버튼을 누르면 /order URL을 POST 방식으로 호출한다.
         - 회원 id, 상품 id, 수량 정보를 받아서 orderService에 주문을 요청한다.
         - 주문이 끝나면 상품 주문 내역이 있는 /orders로 redirect한다.
-        - [@RequestParam](https://github.com/qlalzl9/TIL/blob/ff09a96af100ff09157f5b634e8c6c77c71739a8/Spring_SpringBoot/SpringMVCUtilization.md#%ED%95%B8%EB%93%A4%EB%9F%AC-%EB%A9%94%EC%86%8C%EB%93%9C-3-%EC%9A%94%EC%B2%AD-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98)
+        - [@RequestParam](https://github.com/khy07181/TIL/blob/ff09a96af100ff09157f5b634e8c6c77c71739a8/Spring_SpringBoot/SpringMVCUtilization.md#%ED%95%B8%EB%93%A4%EB%9F%AC-%EB%A9%94%EC%86%8C%EB%93%9C-3-%EC%9A%94%EC%B2%AD-%EB%A7%A4%EA%B0%9C%EB%B3%80%EC%88%98)
 ```java
 @Controller
 @RequiredArgsConstructor

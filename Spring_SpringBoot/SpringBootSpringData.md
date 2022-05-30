@@ -1,7 +1,7 @@
 # 스프링 데이터
 
 ## 소개
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/SpringBootSpringData_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/SpringBootSpringData_1.jpg"></p>
 
 ## 인메모리 데이터베이스
 - Spring-JDBC가 classpath에 있으면 자동 설정이 필요한 빈을 설정 해준다.
@@ -110,7 +110,7 @@ public class H2Runner implements ApplicationRunner {
 ### MySQL 접속시 에러
 - 특정 버전 이상부터 SSL connection을 강제(추천)화 한다.
 - useSSL=false를 하거나 useSSL=true로 주고 truststore를 줘서 SSL 접속을 할 수 있게끔 만들어주면 된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/SpringBootSpringData_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/SpringBootSpringData_2.jpg"></p>
 
 <br>
 
@@ -157,7 +157,7 @@ SELECT * FROM account;
 
 ### PostgreSQL 경고 메세지
 - 해결 메세지를 application.properties에 추가
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/SpringBootSpringData_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/SpringBootSpringData_3.jpg"></p>
 
 <br>
 

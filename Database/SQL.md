@@ -56,7 +56,7 @@ mysql> use mydb;
 <br>
 
 ### 데이터를 저장하는 공간 테이블(Table)
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Database/img/SQL_1.png" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Database/img/SQL_1.png" width="600px"></p>
 
 - 테이블 : RDBMS의 기본적 저장구조 한 개 이상의 column과 0개 이상의 row로 구성
 - 열(Column) : 테이블 상에서의 단일 종류의 데이터를 나타냄. 특정 데이터 타입 및 크기를 가지고 있다.

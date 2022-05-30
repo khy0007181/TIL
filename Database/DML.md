@@ -6,7 +6,7 @@
 <br>
 
 ### SELECT
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Database/img/DML_1.png" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Database/img/DML_1.png" width="600px"></p>
 
 - 전체 데이터 검색 : * 
     * `SELECT * FROM  DEPARTMENT;`
@@ -23,7 +23,7 @@
 <br>
 
 ### ORDER BY
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Database/img/DML_2.png" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Database/img/DML_2.png" width="600px"></p>
 
 - 정렬하기
     * `select empno, name, job from employee order by name;`
@@ -32,7 +32,7 @@
 <br>
 
 ### WHERE
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Database/img/DML_3.png" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Database/img/DML_3.png" width="600px"></p>
 
 - 산술비교 연산자
     * `select name, hiredate from employee where hiredate < '1981-01-01';`
@@ -50,11 +50,11 @@
 <br>
 
 ### CAST 형변환
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Database/img/DML_4.png" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Database/img/DML_4.png" width="600px"></p>
 <br>
 
 ### 그룹함수
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Database/img/DML_5.png" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Database/img/DML_5.png" width="600px"></p>
 
 - `SELECT AVG(salary) , SUM(salary) FROM employee WHERE deptno = 30;`
 - GROUP BY

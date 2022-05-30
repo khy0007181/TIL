@@ -2,11 +2,11 @@
 - 이진 검색은 요소가 오름차순 또는 내림차순으로 정렬된 배열에서 검색하는 알고리즘이다.
 - 검색을 반복할 때마다 검색 범위가 절반이 되므로 검색에 필요한 비교 횟수의 평균은 log n이고 시간 복잡도는 O(log n)이다.
 - 오름차순으로 정렬된 데이터인 아래의 그림에서 39를 검색하는 과정은 먼저 배열의 중앙에 위치한 a[5]부터 검색을 시작한다.
-![](https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Binary_Search_1.png)
+![](https://github.com/khy07181/TIL/blob/master/Algorithm/img/Binary_Search_1.png)
 - 검색하려는 값인 39는 a[5]인 31보다 큰 값이므로 검색 대상을 a[5]보다 큰 값으로 좁힐 수 있다. 그 다음 검색 범위의 중아엥서 위치한 요소인 a[8]과 39를 비교한다.
-![](https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Binary_Search_2.png)
+![](https://github.com/khy07181/TIL/blob/master/Algorithm/img/Binary_Search_2.png)
 - 검색하려는 값인 39는 a[8]인 68보다 작으므로 검색 대상을 작은 값이 a[6]과 a[7]로 줄이고 중앙값((6+7)/2)인 a[6]과 비교했을 때 원하는 값인 39와 일치하므로 검색을 마친다.
-![](https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Binary_Search_3.png)
+![](https://github.com/khy07181/TIL/blob/master/Algorithm/img/Binary_Search_3.png)
 <br>
 
 **이진 검색 예시 코드**

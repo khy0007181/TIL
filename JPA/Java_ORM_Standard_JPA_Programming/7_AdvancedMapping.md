@@ -1,7 +1,7 @@
 # 고급 맵핑
 
 ## 상속 관계 맵핑
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_AdvancedMapping_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_AdvancedMapping_1.jpg"></p>
 
 - 객체는 상속관계가 있지만 관계형 데이터베이스는 상속 관계가 없다.
 - 그나마 슈퍼타입 서브타입 관계라는 모델링 기법이 객체 상속과 유사하다.
@@ -13,7 +13,7 @@
 <br>
 
 ### 조인 전략
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_AdvancedMapping_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_AdvancedMapping_2.jpg"></p>
 
 - ITEM, ALBUM, MOVIE, BOOK 테이블을 만들고 필요할 경우 JOIN으로 데이터를 구성한다.
 - NAME, PRICE가 ITEM 테이블에만 저장되고, ALBUM, MOVIE, BOOK이 각자의 데이터만 저장한다.
@@ -94,7 +94,7 @@ tx.commit();
 <br>
 
 ### 단일 테이블 전략
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_AdvancedMapping_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_AdvancedMapping_3.jpg"></p>
 
 - 논리 모델을 한 테이블로 합치는 것이다.
 - ALBUM, MOVIE, BOOK을 구분할 DTYPE 컬럼으로 어떤 것인지 구분한다.
@@ -122,7 +122,7 @@ public class Item {
 <br>
 
 ### 구현 클래스마다 테이블 전략
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_AdvancedMapping_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_AdvancedMapping_4.jpg"></p>
 
 - ALBUM, MOVIE, BOOK 테이블을 만들어 컬럼들을 각 테이블마다 모두 가지는 방법이다.
     * NAME, PRICE 컬럼들이 중복되도록 허용한다.
@@ -183,7 +183,7 @@ public abstract class Item { //  ITEM 엔티티는 실제 생성되는 테이블
 <br>
 
 ## @MappedSuperclass
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_AdvancedMapping_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_AdvancedMapping_5.jpg"></p>
 
 - 객체 입장에서 공통 맵핑 정보가 필요할 때 사용한다.(id, name)
 - 공통 속성을 부모 클래스에 선언하고 속성만 상속 받아서 사용하고 싶을 경우 `@MappedSuperclass`를 사용한다.
@@ -223,7 +223,7 @@ public class Team extends BaseEntity {
 }
 ```
 - 이렇게 하면 엔티티에 BaseEntity에 선언된 컬럼들이 생성 된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_AdvancedMapping_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_AdvancedMapping_6.jpg"></p>
 
 <br>
 

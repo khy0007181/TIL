@@ -5,7 +5,7 @@
 - 문자열을 비교하며 마지막 문자가 패턴에 있는 경우 
     * 패턴의 마지막부터 일치하는 지 검사한 후 일치하지 않으면 건너뛴다.
 - 문자열 "ABCXDEZCABACABAC"에서 패턴 "ABAC"를 검색하는 경우의 Boyer-Moore법 검색 과정
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Boyer_Moore_1.jpg" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Algorithm/img/Boyer_Moore_1.jpg" width="600px"></p>
 <br>
 
 ## 구현

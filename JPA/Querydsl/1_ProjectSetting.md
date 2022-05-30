@@ -17,7 +17,7 @@
     - Preferences Build, Execution, Deployment Build Tools Gradle
     - Build and run using: Gradle -> IntelliJ IDEA
     - Run tests using: Gradle -> IntelliJ IDEA
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/ProjectSetting_1.png"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/ProjectSetting_1.png"></p>
 
 <br>
 
@@ -26,7 +26,7 @@
     - 설치할 필요 없음
 - Preferences Annotation Processors 검색 Enable annotation processing 체크 (재시작)
 - 임의의 테스트 클래스를 만들고 @Getter, @Setter 확인
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/ProjectSetting_2.png"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/ProjectSetting_2.png"></p>
 
 <br>
 

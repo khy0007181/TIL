@@ -93,7 +93,7 @@ public class AccountController {
 }
 ```
 - 실행하면 다음과 같이 login 화면이 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_1.jpg"></p>
 
 - 매번 localhost:8080에 접속할 때마다 login으로 redirect되기 때문에 Spring Security 설정 추가
     * config 패키지를 만들고 SecurityConfig 추가
@@ -345,7 +345,7 @@ class AccountControllerTest {
 }
 ```
 - 실행하면 다음과 같이 뷰가 잘 만들어진 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_2.jpg"></p>
 
 <br>
 
@@ -570,7 +570,7 @@ public class AccountController {
 }
 ```
 - 실행하면 다음과 같이 토큰이 log에 찍힌 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_3.jpg"></p>
 
 <br>
 
@@ -982,7 +982,7 @@ public class AccountController {
 ```
 - 실행해서 가입하고 이메일 인증을 하면 에러가 난다.
     * account의 emailCheckToken이 null이다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_4.jpg"></p>
 
 - 트랜잭션이 없어서 발생하는 에러이다.
     * AccountService에서 만든 newAccount객체는 detached객체이다.
@@ -1012,7 +1012,7 @@ public class AccountService {
 }
 ```
 - 이제 다시 시도하면 다음과 같이 결과가 잘 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_5.jpg"></p>
 
 <br>
 
@@ -1294,7 +1294,7 @@ class AccountControllerTest {
     }
 }
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_6.jpg"></p>
 
 <br>
 
@@ -1405,7 +1405,7 @@ class AccountControllerTest {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_7.jpg"></p>
 
 <br>
 
@@ -1431,7 +1431,7 @@ class AccountControllerTest {
 - resources/static에 package.json을 만든다.
     * `npm init`
     * 설치하면 다음과 같이 resources/static에 package.json이 생긴 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_8.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_8.jpg"></p>
 
 - 라이브러리 설치
     * `npm install bootstrap`
@@ -1555,7 +1555,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 }
 ```
 - 위의 3가지 고려사항을 수정하고 실행하면 다음과 같이 프론트엔드 라이브러리 설정 변경 후에도 정상적으로 실행되는 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_9.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_9.jpg"></p>
 
 <br>
 
@@ -1792,10 +1792,10 @@ public class UserAccount extends User {
 }
 ``` 
 - 실행하면 뷰에 전달된 account가 null이므로 경고창이 뜨지 않고 가입을 하면 경고창이 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_10.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_10.jpg"></p>
 
 - 이미 구현한 이메일 인증을 하면 다음과 같이 이메일 인증이 되고 홈으로 돌아가도 인증을 하라는 경고창이 뜨지 않는다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_11.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_11.jpg"></p>
 
 <br>
 
@@ -1911,9 +1911,9 @@ public class AccountController {
 }
 ```
 - 실행하면 다음과 같이 이메일 인증 화면이 정상적으로 나오고 인증 이메일을 다시 보내면 1시간에 1번만 보낼 수 있다고 경고 메세지가 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_12.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_12.jpg"></p>
 
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_13.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_13.jpg"></p>
 
 <br>
 
@@ -2054,7 +2054,7 @@ public class AccountService implements UserDetailsService {
 }
 ```
 - 실행하면 다음과 같이 로그인 페이지가 잘 만들어졌고 로그인, 로그아웃 기능도 정상적으로 동작한다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_14.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_14.jpg"></p>
 
 <br>
 
@@ -2356,7 +2356,7 @@ public class AccountController {
 </html>
 ```
 - 실행 후 확인하면 이메일 인증을 해도 가입 날짜가 제대로 뜨지 않는다. (에러 발생)
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_15.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_15.jpg"></p>
 
 <br>
 
@@ -2421,6 +2421,6 @@ public class AccountService implements UserDetailsService {
 }
 ```
 - 실행해서 확인하면 다음과 같이 가입 날짜가 잘 나오는 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/signUp_16.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/signUp_16.jpg"></p>
 
 <br>

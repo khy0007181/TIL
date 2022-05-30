@@ -1,7 +1,7 @@
 # 도메인 분석 설계
 
 ## 요구사항 분석
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/Domain_Analysis_Design_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/Domain_Analysis_Design_1.jpg"></p>
 
 - 회원 기능
     * 회원 등록
@@ -22,7 +22,7 @@
 <br>
 
 ## 도메인 모델과 테이블 설계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/Domain_Analysis_Design_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/Domain_Analysis_Design_2.jpg"></p>
 
 - 회원은 여러 상품을 주문할 수 있기 때문에 1:N 관계다.
     * 회원 : 주문 = 1 : N
@@ -32,7 +32,7 @@
 <br>
 
 ### 회원 엔티티 분석
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/Domain_Analysis_Design_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/Domain_Analysis_Design_3.jpg"></p>
 
 - 회원(Member)
     * 이름과 임베디드 타입인 주소(Address), 주문리스트(orders)를 가진다.
@@ -58,7 +58,7 @@
 <br>
 
 ### 회원 테이블 분석
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/Domain_Analysis_Design_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/Domain_Analysis_Design_4.jpg"></p>
 
 - MEMBER
     * 거의 1:1 맵핑이다.

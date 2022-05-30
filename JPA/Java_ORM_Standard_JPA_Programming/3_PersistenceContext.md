@@ -8,7 +8,7 @@
 <br>
 
 ### 엔티티 매니저 팩토리와 엔티티 매니저
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_1.jpg"></p>
 
 - 사용자의 요청이 올 때마다 EntityManagerFactory를 통해서 EntityManager를 생성한다.
 - EntityMagager는 내부적으로 DB 커넥션을 사용해서 DB를 사용한다.
@@ -22,7 +22,7 @@
     * 정확히는 `persist()`는 DB에 저장하는 것이 아니라 entity를 영속성 컨텍스트라는 곳에 저장한다.
 - 영속성 컨텍스트는 눈에 보이지 않는 논리적인 개념이다.
 - 엔티티 매니저를 통해서 영속성 컨텍스트에 접근한다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_2.jpg"></p>
 
 - 스프링에서 EntityManager를 주입 받아서 쓰면, 같은 트랜잭션의 범위에 있는 EntityManager는 동일 영속성 컨텍스트에 접근한다.
 <br>
@@ -87,7 +87,7 @@ public class JpaMain {
 <br>
 
 ### 1차 캐시
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_3.jpg"></p>
 
 - 영속성 컨텍스트는 내부에 1차 캐시를 가지고 있다.
 - 엔티티가 영속성 컨텍스트에 저장(persist)되면 1차 캐시에 Map이 저장된다.
@@ -137,7 +137,7 @@ public class JpaMain {
     }
 }
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_4.jpg"></p>
 
 - 다음 코드와 같이 101번에 엔티티가 저장된 상태에서 2번 조회하면 쿼리가 한 번 나온다.
     * 새로 실행하면 엔티티 매니저가 새로 생성되고 처음 조회 했을때는 1차 캐시에 없기 때문에 DB에서 가져오고 영속성 컨텍스트에 올려놓는다.
@@ -168,7 +168,7 @@ public class JpaMain {
     }
 }
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_5.jpg"></p>
 <br>
 
 ### 영속 엔티티의 동일성 보장
@@ -186,8 +186,8 @@ System.out.println("result = " + (findMember1 == findMember2)); // 동일성 비
 <br>
 
 ### 엔티티 등록 - 트랜잭션을 지원하는 쓰기 지연
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_6.jpg"></p>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_7.jpg"></p>
 
 - 영속성 컨텍스트 안에는 1차 캐시도 있지만 쓰기 지연 SQL 저장소라는 것도 있다.
 - `em.persist(memberA);`과 `em.persist(memberB);`를 수행했을 때의 과정
@@ -215,7 +215,7 @@ transaction.commit();
 
 ### 엔티티 수정 - Dirty Checking(변경 감지)
 - 엔티티 수정을 하고 나서 `persist()`나 `update()`로 다시 저장할 필요가 없다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_PersistenceContext_8.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_PersistenceContext_8.jpg"></p>
 
 - DB 트랜잭션을 커밋하면 `flush()`가 호출되고 엔티티와 스냅샷을 비교한다.
     * 1차 캐시에는 PK인 @Id가 있고, Entity, 스냅샷이 있다.

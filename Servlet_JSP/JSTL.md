@@ -3,12 +3,12 @@
 - 이러한 단점을 보완하고자 만들어진 태그 라이브러리가 JSTL이다
 - JSP 페이지에서 조건문 처리, 반복문 처리 등을 html tag형태로 작성할 수 있게 도와준다.
 <br>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Servlet_JSP/img/JSTL_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Servlet_JSP/img/JSTL_2.jpg"></p>
 <br>
 
 ### JSTL 라이브러리
 - JSTL은 5가지 라이브러리를 제공한다.
-![](https://github.com/qlalzl9/TIL/blob/master/Servlet_JSP/img/JSTL_1.png)
+![](https://github.com/khy07181/TIL/blob/master/Servlet_JSP/img/JSTL_1.png)
 
 #### Core
 - Core 라이브러리는 기본적인 라이브러리로 출력, 제어문, 반복문 같은 기능이 포함되어 있다.

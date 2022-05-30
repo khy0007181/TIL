@@ -14,7 +14,7 @@
     * Event와 Enrollment는 `@OneToMany` `@ManyToOne` 양방향 관계
     * Event는 Account쪽으로 `@ManyToOne` 단방향 관계
     * Enrollment는 Account쪽으로 `@ManyToOne` 단방향 관계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/meeting_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/meeting_1.jpg"></p>
 
 <br>
 
@@ -347,7 +347,7 @@ public class EventController {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/meeting_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/meeting_2.jpg"></p>
 
 <br>
 
@@ -663,7 +663,7 @@ public class Event {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/meeting_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/meeting_3.jpg"></p>
 
 <br>
 
@@ -864,7 +864,7 @@ public class Event {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/meeting_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/meeting_4.jpg"></p>
 
 <br>
 
@@ -1083,7 +1083,7 @@ public class EventService {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/meeting_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/meeting_5.jpg"></p>
 
 <br>
 
@@ -1132,7 +1132,7 @@ public class EventService {
     }
 }
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/meeting_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/meeting_6.jpg"></p>
 
 <br>
 

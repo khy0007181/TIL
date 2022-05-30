@@ -66,7 +66,7 @@ con.close();
 <br>
 
 ### JDBC 클래스의 생성 관계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Database/img/JDBC_1.png" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Database/img/JDBC_1.png" width="600px"></p>
 <br>
 
 

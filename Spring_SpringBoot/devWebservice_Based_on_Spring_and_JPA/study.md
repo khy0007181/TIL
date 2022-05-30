@@ -17,7 +17,7 @@
     * Study에서 Account 쪽으로 @ManyToMany 단방향 관계 두 개 (managers, members)
     * Study에서 Zone으로 @ManyToMany 단방향 관계
     * Study에서 Tag로 @ManyToMany 단방향 관계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_1.jpg"></p>
 
 ```java
 @Entity
@@ -202,7 +202,7 @@ public class StudyForm {
 <link rel="stylesheet" href="/node_modules/summernote/dist/summernote-bs4.min.css">
 ```
 - 실행해서 스터디 개설 버튼을 클릭하면 다음과 같이 스터디를 생성할 수 있는 페이지가 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_2.jpg"></p>
 
 - **계속해서 스터디 만들기 submit 버튼을 눌러 스터리를 생성한다면?**
 - StudyController POST 맵핑 추가
@@ -481,7 +481,7 @@ public class Study {
 </html>
 ```
 - 실행해서 스터디를 개설하면 다음과 같이 스터디 조회 화면이 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_3.jpg"></p>
 
 <br>
 
@@ -749,7 +749,7 @@ public class StudyController {
 </body>
 </html> 
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_4.jpg"></p>
 
 <br>
 
@@ -1046,7 +1046,7 @@ public class StudyService {
 </body>
 </html> 
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_5.jpg"></p>
 
 <br>
 
@@ -1309,7 +1309,7 @@ public class Study {
 </body>
 </html> 
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_6.jpg"></p>
 
 <br>
 
@@ -1759,7 +1759,7 @@ public class Study {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_7.jpg"></p>
 
 <br>
 
@@ -2093,7 +2093,7 @@ public class Study {
 </html>
 ```
 - 실행하면 다음 화면과 같이 스터디 공개 및 종료, 팀원 모집/중단 기능을 사용할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_8.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_8.jpg"></p>
 
 <br>
 
@@ -2196,7 +2196,7 @@ public class StudyService {
 }
 ```
 - 뷰는 이미 스터디 상태에서 만들었었다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_9.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_9.jpg"></p>
 
 <br>
 
@@ -2298,7 +2298,7 @@ public class Study {
 
 ...
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_10.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_10.jpg"></p>
 
 <br>
 
@@ -2385,7 +2385,7 @@ public class Study {
 }
 ```
 - 실행하면 다음과 같이 새로운 스터디원의 참여/탈퇴 기능이 성공적으로 수행된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/study_11.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/study_11.jpg"></p>
 
 <br>
 

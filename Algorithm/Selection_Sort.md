@@ -1,7 +1,7 @@
 # 선택정렬 (Selection Sort) 
 
 ## 단순 선택 정렬
-![](https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Selection_Sort_1.jpg)
+![](https://github.com/khy07181/TIL/blob/master/Algorithm/img/Selection_Sort_1.jpg)
 - 가장 작은 요소부터 선택해 알맞은 위치로 옮겨서 순서대로 정렬하는 알고리즘이다.
 - 서로 떨어져 있는 데이터를 교환하는 것이기 때문에 안정적이지 않다.
 - 비교 횟수 : ($n^{2}$ - n) / 2 회 <br>

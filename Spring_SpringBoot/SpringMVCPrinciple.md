@@ -78,7 +78,7 @@
 - 들어온 요청을 Servlet으로 보내고, 또 Servlet이 작성한 응답을 클라이언트로 보내기 전에 특별한 처리가 필요한 경우에 사용할 수 있다.
 - Servlet 필터를 사용하면 여러 개의 Servlet에 추가적인 작업을 할 수 있고, 특정한 url 패턴에도 작업을 추가로 할 수 있다.
 - 동시다발적으로 적용되는 것이 아니라 체인 형태의 구조로 순차적으로 적용된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/SpringMVCPrinciple_1.jpg" width="400px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/SpringMVCPrinciple_1.jpg" width="400px"></p>
 
 <br>
 
@@ -167,7 +167,7 @@ public class HelloServlet extends HttpServlet {
 <br>
 
 ### 2. 스프링 MVC 연동
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/SpringMVCPrinciple_2.jpg" width="400px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/SpringMVCPrinciple_2.jpg" width="400px"></p>
 
 - 스프링이 제공하는 Servlet 구현체 DispatcherServlet을 사용하는 방법
 - Root WebApplicationContext를 상속받는 ApplicationContext(Servlet WebApplicationContext)를 하나 더 만든다.

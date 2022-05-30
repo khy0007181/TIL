@@ -1,7 +1,7 @@
 # 패키지 및 테스트 코드 정리
 
 ## 패키지 정리
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/package_testCode_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/package_testCode_1.jpg"></p>
 
 - 지금까지 만든 도메인 엔티티 클래스 간의 관계는 그림과 같이 5개의 묶음으로 나눌 수 있다.
     * 단방향
@@ -163,6 +163,6 @@ public class StudyFactory {
 }
 ```
 - 이제 나머지 클래스들에 테스트 클래스들의 상속 관계를 없애고 `@MockMvcTest`, AccountFactory, StudyFactory를 사용하면 된다.
-    * [코드 커밋 참고](https://github.com/qlalzl9/studyolle/commit/e0c2097c88ef76beb4bc23b8ce00aafc07b73725)
+    * [코드 커밋 참고](https://github.com/khy07181/studyolle/commit/e0c2097c88ef76beb4bc23b8ce00aafc07b73725)
     * 수정 후 전체 테스트를 실행하면 성공적으로 수행된다.
 <br>

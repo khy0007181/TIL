@@ -4,7 +4,7 @@
 - 따라서 효율이 매우 좋지 않다.
 - 시간복잡도 : O(문자열의 길이 * 검색할 문자열의 길이)
 - 검색 과정
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Brute_Force_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Algorithm/img/Brute_Force_1.jpg"></p>
 
 ## 구현
 ```java

@@ -5,7 +5,7 @@
 - 최대 힙 트리 또는 최소 힙 트리를 구성하고 root에 있는 데이터를 배열의 마지막 index부터 저장하여 정렬하는 알고리즘이다.
 - 시간복잡도<br>
 
-![](https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Heap_Sort_1.jpg)
+![](https://github.com/khy07181/TIL/blob/master/Algorithm/img/Heap_Sort_1.jpg)
 - 정렬 과정
     1. 정렬해야 할 n개의 데이터로 최대 또는 최소 힙을 만든다.
     2. root의 값을 배열의 뒤부터 저장한다.
@@ -13,7 +13,7 @@
     4. 바뀐 root의 값을 비교하며 알맞은 위치로 옮긴다.
     5. 1~4 반복
 
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Heap_Sort_2.jpg" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Algorithm/img/Heap_Sort_2.jpg" width="600px"></p>
 
 ## 구현
 ```java

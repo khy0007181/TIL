@@ -4,14 +4,14 @@
 - 배열로 구성하는 것보다 연결 리스트로 구성하는 것이 효율적이다.
 - 시간복잡도<br>
 
-![](https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Merge_Sort_1.jpg)
+![](https://github.com/khy07181/TIL/blob/master/Algorithm/img/Merge_Sort_1.jpg)
 - 정렬 과정
     * 데이터의 길이가 0 또는 1이면 이미 정렬된 것으로 본다.
     * 그렇지 않은 경우, 정렬되지 않은 데이터를 절반으로 잘라 비슷한 크기의 두 부분으로 나눈다.
     * 각 부분 데이터를 재귀적으로 병합 정렬을 이용해 정렬한다.
     * 데이터를 다시 하나의 정렬된 리스트로 병합한다.<br>
 
-![](https://github.com/qlalzl9/TIL/blob/master/Algorithm/img/Merge_Sort_2.jpg)
+![](https://github.com/khy07181/TIL/blob/master/Algorithm/img/Merge_Sort_2.jpg)
 
 ## 구현
 ```java

@@ -33,7 +33,7 @@ public class SpringinitApplication {
 - `${spring-boot.version}` 등의 변수를 사용할 수 있다.
     * 일부는 manifest 파일이 생성이 되어야 사용 가능한 변수가 있다.
     * 그런 변수들은 mvn package를 해서 jar 파일을 만들면 manifest파일도 만들기 때문에 사용 가능하다. 
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/SpringBootCore_1.jpg" width="600px"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/SpringBootCore_1.jpg" width="600px"></p>
 
 - 배너를 코딩으로 구현하기
     * 배너를 코딩으로 구현하면 gif, jpg, png 등 이미지 파일도 사용 가능하다.

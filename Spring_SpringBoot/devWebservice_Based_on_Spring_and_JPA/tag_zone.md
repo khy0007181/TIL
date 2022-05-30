@@ -176,7 +176,7 @@ public class SettingsController {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/tag_zone_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/tag_zone_1.jpg"></p>
 
 <br>
 
@@ -237,7 +237,7 @@ public class AccountService implements UserDetailsService {
 }
 ```
 - 실행해서 관심 주제를 추가하면 다음과 같이 성공적으로 추가된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/tag_zone_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/tag_zone_2.jpg"></p>
 
 <br>
 
@@ -389,7 +389,7 @@ var tagify = new Tagify(tagInput, {
             });
 ```
 - 실행해서 확인하면 다음과 같이 이미 등록한 태그들은 다음에, 또는 다른 유저가 등록할 경우 whitelist로 자동완성을 제공한다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/tag_zone_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/tag_zone_3.jpg"></p>
 
 <br>
 
@@ -788,7 +788,7 @@ public class AccountService implements UserDetailsService {
 </html>
 ```
 - 실행하면 관심주제와 같이 활동 지역도 정상적으로 동작한다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/tag_zone_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/tag_zone_4.jpg"></p>
 
 <br>
 

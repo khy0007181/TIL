@@ -35,7 +35,7 @@ public class OrderSimpleApiController {
 - 모든 양방향 연관관계에 적용하고 실행해도 Type definition error 에러가 난다.
     * 지연로딩에서는 연관관계로 엮여있는 엔티티의 DB 실제 객체를 가져오지 않고 프록시 객체를 가져온다.
     * jackson 라이브러리는 기본적으로 이 프록시 객체를 json으로 어떻게 생성해야 하는지 모르기 때문에 에러가 발생하는 것이다.
-    * [참고 : 프록시와 연관관계 관리](https://github.com/qlalzl9/TIL/blob/b237d5631facf5deda0ec7c8fab01277be2206cc/JPA/Java_ORM_Standard_JPA_Programming/8_Proxy_RelationManaging.md#%ED%94%84%EB%A1%9D%EC%8B%9C%EC%99%80-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9-%EC%A3%BC%EC%9D%98%EC%A0%90)
+    * [참고 : 프록시와 연관관계 관리](https://github.com/khy07181/TIL/blob/b237d5631facf5deda0ec7c8fab01277be2206cc/JPA/Java_ORM_Standard_JPA_Programming/8_Proxy_RelationManaging.md#%ED%94%84%EB%A1%9D%EC%8B%9C%EC%99%80-%EC%A6%89%EC%8B%9C%EB%A1%9C%EB%94%A9-%EC%A3%BC%EC%9D%98%EC%A0%90)
 - 이를 해결하기 위해 Hibernate5Module을 설치해야 한다.
     * build.gradle에 `'com.fasterxml.jackson.datatype:jackson-datatype-hibernate5'` 의존성 추가 
     * Hibernate5Module을 스프링 빈으로 등록
@@ -54,7 +54,7 @@ public class OrderSimpleApiController {
     ```
 - 실행 후 조회하면 다음과 같이 조회된다.
     * Lazy 로딩이 아예 안되게 하는 것이다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_1.jpg"></p>
 
 - 다음과 같이 강제로 지연 로딩을 시키면 조회는 할 수 있다.
 ```java
@@ -76,7 +76,7 @@ public class OrderSimpleApiController {
     }
 }
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_2.jpg"></p>
 
 - 어떻게든 해결한다고 해도 엔티티를 노출시키는 것은 안좋은 방법이다.
     * API 스펙 변경 문제
@@ -127,7 +127,7 @@ public class OrderSimpleApiController {
 ```
 - 실행 후 조회하면 다음과 같이 결과가 나온다.
     * API 스펙에 최적화되어 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_3.jpg"></p>
 
 - 문제점
     * V1과 마찬가지로 지연 로딩으로 인한 DB 쿼리가 너무 많이 호출된다.
@@ -138,7 +138,7 @@ public class OrderSimpleApiController {
 <br>
 
 ## V3. 엔티티를 DTO로 변환 - 페치 조인 최적화
-- [참고 : fetch join](https://github.com/qlalzl9/TIL/blob/b237d5631facf5deda0ec7c8fab01277be2206cc/JPA/Java_ORM_Standard_JPA_Programming/11_JPQL2.md#%ED%8E%98%EC%B9%98-%EC%A1%B0%EC%9D%B8fetch-join)
+- [참고 : fetch join](https://github.com/khy07181/TIL/blob/b237d5631facf5deda0ec7c8fab01277be2206cc/JPA/Java_ORM_Standard_JPA_Programming/11_JPQL2.md#%ED%8E%98%EC%B9%98-%EC%A1%B0%EC%9D%B8fetch-join)
 - OrderRepository에 페치 조인을 위한 메서드 생성
     * 페치 조인을 사용하면 지연 로딩을 하지 않고 연관된 실제 엔티티를 한번에 다 조회한다.
 ```java
@@ -185,11 +185,11 @@ public class OrderSimpleApiController {
     * V2와 결과는 같지만 쿼리 발생 수가 다르다. 
         - V2 : 5번, V3 : 1번
     * 페치 조인으로 order->member, order->delivery는 이미 조회된 상태이므로 지연로딩이 일어나지 않는다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_4.jpg"></p>
 
 - 실무에서 매우 자주 사용하는 기법으로 성능이 굉장히 좋다.
 - 그러나 연관되는 엔티티의 모든 컬럼을 가져온다는 단점이 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_5.jpg"></p>
 
 <br>
 
@@ -260,7 +260,7 @@ public class OrderSimpleApiController {
 ```
 - 실행하고 조회하면 결과는 똑같지만 V3와 달리 원하는 컬럼만 SELECT 쿼리가 나가는 것을 볼 수 있다.
     * 직접 쿼리를 다 짰기 때문이다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/API_delayLoading_and_readOptimization_6.jpg"></p>
 
 <br>
 

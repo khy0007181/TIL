@@ -1,7 +1,7 @@
 > 자바의 정석(남궁성 저) 학습내용 정리
 
 ### 1. Object 클래스
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/9_1.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/9_1.png)
 
 #### 1-1 equals(Object obj)
 ```java
@@ -69,7 +69,7 @@ Class cobj = Class.forName("Card");		// 클래스 이름으로부터 얻는 방�
 String을 빈 문자열(" ")로 초기화하고 char를 공백(' ')으로 초기화하는 것이 바람직하다.
 - String은 참조형의 기본값인 null 보다 빈 문자열로 초기화하고 char형은 기본값인 ‘\u0000’보다 공백으로 초기화하자.
 
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/9_2.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/9_2.png)
 
 <br>
 
@@ -88,7 +88,7 @@ int i2 = Integer.valueOf("100");		// 방법2 : "100"을 100으로 변환(JDK1.5 
 char c = "A".charAt(0);				// 문자열 "A"를 문자 'A'로 변환하는 방법
 ```
 
-![](https://github.com/qlalzl9/TIL/blob/master/Java/img/9_3.png)
+![](https://github.com/khy07181/TIL/blob/master/Java/img/9_3.png)
 
 <br>
 

@@ -158,7 +158,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     ...
 }
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_1.jpg"></p>
 
 <br>
 
@@ -263,7 +263,7 @@ public class StudyService {
 ```
 - 실행해서 데이터를 추가하고 작성했던 코드를 되돌린다.
     * 실행하면 다음과 같이 DB에 랜덤값이 달린 스터디 30개가 생성된다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_2.jpg"></p>
 
 <br>
 
@@ -357,7 +357,7 @@ public class StudyRepositoryExtensionImpl extends QuerydslRepositorySupport impl
                     <div class="col-md-4" th:each="study: ${studyPage.getContent()}">
                     ...
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_3.jpg"></p>
 
 <br>
 
@@ -520,7 +520,7 @@ public class Study {
     }
 </style>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_4.jpg"></p>
 
 <br>
 
@@ -662,7 +662,7 @@ public interface StudyRepository extends JpaRepository<Study, Long>, StudyReposi
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_5.jpg"></p>
 
 <br>
 
@@ -901,4 +901,4 @@ public interface StudyRepository extends JpaRepository<Study, Long>, StudyReposi
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/search_firstPage_6.jpg"></p>

@@ -11,7 +11,7 @@
 
 ## 알림 도메인
 - Notification에서 Account로 ManyToOne 단방형 관계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/notification_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/notification_1.jpg"></p>
 
 <br>
 
@@ -359,8 +359,8 @@ public interface NotificationRepository extends JpaRepository<Notification, Long
 ```
 - 실행해서 스터디를 만들고 스터디 주제와 지역을 account가 가지고 있는 tag와 zone 중 하나로 설정하면 다음과 같이 알림이 온다.
     * 웹 알림이 왔는지 조회하는 기능은 아직 구현하지 않았지만 DB에는 알림이 저장된 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/notification_2.jpg"></p>
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/notification_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/notification_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/notification_3.jpg"></p>
 
 <br>
 
@@ -437,7 +437,7 @@ public class WebConfig implements WebMvcConfigurer {
 <i th:if="${!hasNotification}" class="fa fa-bell-o" aria-hidden="true"></i>
 <span class="text-info" th:if="${hasNotification}"><i class="fa fa-bell" aria-hidden="true"></i></span>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/notification_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/notification_4.jpg"></p>
 
 <br>
 
@@ -645,7 +645,7 @@ public class NotificationService {
 </body>
 </html>
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/notification_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/notification_5.jpg"></p>
 
 <br>
 
@@ -717,7 +717,7 @@ public class StudyUpdateEvent {
     * `@EntityGraph`는 기본이 FETCH기 때문에 attributePaths를 사용해서 줄일 수 있다.
     * 따라서 Study 엔티티의 `@NamedEntityGraph` 애노테이션도 없앨 수 있다. 
     * FETCH가 아닌 LOAD를 사용하고 싶다면 attributePaths를 설정하고  type을 따로 설정하면 된다.
-    * [해당 커밋 참고](https://github.com/qlalzl9/studyolle/commit/5862d618635d302b386c31b4c19b79dcc9006ad8)
+    * [해당 커밋 참고](https://github.com/khy07181/studyolle/commit/5862d618635d302b386c31b4c19b79dcc9006ad8)
 ```java
 @Transactional(readOnly = true)
 public interface StudyRepository extends JpaRepository<Study, Long> {
@@ -831,7 +831,7 @@ public class StudyEventListener {
     }
 }
 ```
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/notification_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/notification_6.jpg"></p>
 
 <br>
 
@@ -985,4 +985,4 @@ public class EnrollmentEventListener {
 }
 ```
 
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/notification_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/notification_7.jpg"></p>

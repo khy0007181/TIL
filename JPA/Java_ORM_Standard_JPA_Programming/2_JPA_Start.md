@@ -79,7 +79,7 @@
 <br>
 
 ### 데이터베이스 방언(Dialect)
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Start_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Start_1.jpg"></p>
 
 - 방언 : SQL 표준을 지키지 않거나 특정 데이터베이스 만의 고유한 기능
 - JPA는 특정 데이터베이스에 종속적이지 않은 기술이다.
@@ -98,7 +98,7 @@
 ## 애플리케이션 개발
 
 ### JPA 구동 방식
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Start_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Start_2.jpg"></p>
 
 - JPA의 Persistence 클래스가 persistence.xml의 설정 정보를 읽어서 EntityManagerFactory라는 클래스를 만든다.
 - EntityManagerFactory 클래스에서 필요할 때마다 EntityManager를 만든다.
@@ -160,10 +160,10 @@ public class JpaMain {
 }
 ```
 - main을 실행하면 다음과 같이 쿼리가 나온다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Start_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Start_3.jpg"></p>
 
 - DB에서도 데이터(member)가 잘 저장된 것을 볼 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Start_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Start_4.jpg"></p>
 
 - 이렇게 쿼리를 작성하지 않아도 JPA가 맵핑 정보를 보고 쿼리를 만든 것이다. 
 - Member가 MEMBER 테이블에 저장된 것은 관례를 따른 것으로 만약 DB에 테이블 이름이 다르거나 DB 컬럼의 이름이 다를 경우 다음 코드와 같이 작성하면 된다.

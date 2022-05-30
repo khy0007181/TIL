@@ -2,7 +2,7 @@
 - Member와 Team은 양방향 연관관계
 - Member.team이 연관관계의 주인, Team.members는 연관관계의 주인이 아님 
 - 따라서 Member.team이 데이터베이스 외래키 값을 변경, 반대편은 읽기만 가능
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/ex_domain_1.png"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/ex_domain_1.png"></p>
 
 <br>
 

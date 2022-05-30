@@ -51,7 +51,7 @@ UPDATE MEMBER SET ... TEL = ?
 - 객체의 상속 관계와 그나마 유사한 것이 Table의 슈퍼타입 서브타입 관계라는 논리 모델이다.
 
 - 예를 들어 다음과 같이 객체와 table을 설계했다고 했을 때
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Intro_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Intro_1.jpg"></p>
 
 - Album 객체를 저장하는 경우
     * Item을 상속받았으므로 Album이 데이터를 다 가지고 있다.
@@ -67,7 +67,7 @@ UPDATE MEMBER SET ... TEL = ?
 <br>
 
 #### 연관관계
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Intro_2.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Intro_2.jpg"></p>
 
 - 객체는 참조를 사용한다.
     * 객체는 **단방향**으로, Member에서 Team으로 갈 수 있지만 Team에서 Member로 갈 수 없다.
@@ -150,7 +150,7 @@ public Member find(Strubg memberId) {
 <br>
 
 ### 객체 그래프 탐색
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Intro_3.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Intro_3.jpg"></p>
 
 - 객체는 자유롭게 객체 그래프를 탐색할 수 있어야 한다.
     * 예를 들어, `member.getOrder()`,`member.getTeam()`와 같이 호출할 수 있어야 한다.
@@ -251,14 +251,14 @@ member1 == member2; // 같다.
 <br>
 
 ### JPA의 동작
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Intro_4.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Intro_4.jpg"></p>
 
 - JPA는 애플리케이션과 JDBC 사이에서 동작한다.
 - 개발자가 직접 JDBC API를 사용하는 것이 아니라 JPA에게 명령하면 JPA가 JDBC API를 사용해서 SQL을 호출하고 결과를 받아서 동작한다. 
 <br>
 
 #### 저장
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Intro_5.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Intro_5.jpg"></p>
 
 - memberDAO에서 객체를 저장하고 싶은 경우
     * JPA에게 Member객체를 넘기면 JPA가 객체를 분석한다.
@@ -268,7 +268,7 @@ member1 == member2; // 같다.
 <br>
 
 #### 조회
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Intro_6.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Intro_6.jpg"></p>
 
 - JPA에게 PK값으로 find 요청하면 JPA는 SELECT 쿼리를 만든다.
 - JDBC API를 통해 DB에 보내고 결과를 받는다.
@@ -298,7 +298,7 @@ member1 == member2; // 같다.
 - 관계형 DB와 객체의 패러다임 불일치를 해결해 준다.
 
 **JPA와 상속**
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/JPA/img/JPA_Intro_7.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/JPA/img/JPA_Intro_7.jpg"></p>
 
 
 - 저장

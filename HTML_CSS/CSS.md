@@ -1,5 +1,5 @@
 ### 웹페이지에 CSS를 사용하는 방법
-![](https://github.com/qlalzl9/TIL/blob/master/HTML_CSS/img/CSS_1.png)
+![](https://github.com/khy07181/TIL/blob/master/HTML_CSS/img/CSS_1.png)
 #### 1. inline
 - HTML 태그 안에 style을 적용
 - 다른 CSS파일에 적용한 것보다 먼저 작용한다.
@@ -196,7 +196,7 @@ p  {
 <br>
 
 ### CSS box model
-![](https://github.com/qlalzl9/TIL/blob/master/HTML_CSS/img/CSS_2.png)
+![](https://github.com/khy07181/TIL/blob/master/HTML_CSS/img/CSS_2.png)
 - Margin, Padding 을 top, right, bottom, left 등으로 조절할 수 있다.
 - block level element : 화면 전체를 크기로 가지는 태그<br>
 ex) `<p>`, `<hn>`, `<ul>`, `<ol>`, `<div>`, `<blockquote>`, `<form>`, `<hr>`, `<table>`, `<fieldset>`, `<address>` 등
@@ -536,7 +536,7 @@ ex) `<img>`, `<object>`, `<br>`, `<sub>`, `<span>`, `<input>`, `<textare>`, `<la
   </body>
 </html>
 ```
-![](https://github.com/qlalzl9/TIL/blob/master/HTML_CSS/img/CSS_3.png)
+![](https://github.com/khy07181/TIL/blob/master/HTML_CSS/img/CSS_3.png)
 - grid layout을 사용하여 선택자들 간의 배치를 다양하게 할 수 있다.
 - 위의 코드에서 NAVIGATION은 150px을 가지고 나머지를 ARTICLE이 채운다.
 <br>

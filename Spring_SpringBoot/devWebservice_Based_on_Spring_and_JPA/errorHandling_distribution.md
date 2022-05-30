@@ -57,7 +57,7 @@ public class ExceptionAdvice {
 }
 ```
 - 실행해서 잘못된 요청을 보내면 다음과 같이 로깅된 것을 확인할 수 있다.
-<p align="center"><img src = "https://github.com/qlalzl9/TIL/blob/master/Spring_SpringBoot/img/errorHandling_distribution_1.jpg"></p>
+<p align="center"><img src = "https://github.com/khy07181/TIL/blob/master/Spring_SpringBoot/img/errorHandling_distribution_1.jpg"></p>
 
 <br>
 
